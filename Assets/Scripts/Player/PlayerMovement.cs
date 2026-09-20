@@ -21,10 +21,20 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private float penaltyTimer = 0f;
     private float stunTimer = 0f;
+    private Vector3 startPosition;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        startPosition = transform.position;
+    }
+
+    // Appelé par GameManager.ResetGame() : remet le nain à sa position de
+    // spawn réelle (celle placée dans l'éditeur), pas un point arbitraire
+    public void ResetToStart()
+    {
+        transform.position = startPosition;
+        rb.linearVelocity = Vector2.zero;
     }
 
     private void Update()
@@ -94,5 +104,29 @@ public class PlayerMovement : MonoBehaviour
     {
         stunTimer = duration;
         rb.linearVelocity = ejection;
+    }
+
+    // Activé/désactivé par GameManager : mort = désactivation, reset d'épisode = réactivation
+    // (le DwarfAgent reste fonctionnel même désactivé — indispensable pour l'entraînement)
+    public void SetEntityActive(bool active)
+    {
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null) sr.enabled = active;
+
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null) col.enabled = active;
+
+        if (!active) rb.linearVelocity = Vector2.zero;
+
+        // Le collider/renderer ne suffisent pas à "geler" le nain : sans ça, le
+        // cadavre garde son Update() actif (glisse sur l'input résiduel, peut
+        // encore swinguer/repousser des ennemis vivants) jusqu'au reset d'épisode.
+        HammerController hammerCtrl = GetComponent<HammerController>();
+        if (hammerCtrl != null) hammerCtrl.enabled = active;
+
+        ShieldController shieldCtrl = GetComponent<ShieldController>();
+        if (shieldCtrl != null) shieldCtrl.enabled = active;
+
+        enabled = active; // PlayerMovement lui-même, en dernier (sinon on ne s'exécute plus)
     }
 }

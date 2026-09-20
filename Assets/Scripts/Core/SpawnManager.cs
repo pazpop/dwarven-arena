@@ -4,8 +4,8 @@ public class SpawnManager : MonoBehaviour
 {
     public static SpawnManager Instance { get; private set; }
 
-    public GameObject enemyPrefab;  // Goblin.prefab
-    public Transform[] spawnPoints; // Positions de spawn
+    public GameObject enemyPrefab;   // Goblin.prefab
+    public Transform[] spawnPoints;   // Positions de spawn
 
     [Header("Vagues")]
     public int enemiesPerWave = 5;
@@ -14,10 +14,14 @@ public class SpawnManager : MonoBehaviour
 
     private int enemiesAlive = 0;
     private int enemiesInWave = 0;
+    private int baseEnemiesPerWave;   // Valeur de départ, sauvegardée pour les resets d'épisode
 
     private void Awake()
     {
         Instance = this;
+        // Sauvegarde AVANT toute mutation : la courbe de progression incrémente
+        // enemiesPerWave à chaque vague, il faut pouvoir revenir au départ à chaque épisode
+        baseEnemiesPerWave = enemiesPerWave;
     }
 
     private void Start()
@@ -25,6 +29,30 @@ public class SpawnManager : MonoBehaviour
         enemiesInWave = enemiesPerWave;
         StartCoroutine(SpawnLoopRoutine());
     }
+
+    // ==================== ENTRAÎNEMENT ML-AGENTS ====================
+
+    // Appelé par GameManager.ResetGame() à chaque début d'épisode :
+    // purge les ennemis survivants, remet les compteurs à zéro, relance les vagues
+    public void StartTrainingEpisode()
+    {
+        StopAllCoroutines();
+
+        // Purge des gobelins survivants de l'épisode précédent
+        foreach (var enemy in FindObjectsByType<EnemyAI>())
+        {
+            Destroy(enemy.gameObject);
+        }
+        enemiesAlive = 0;
+
+        // Reset de la courbe de progression (sinon : vagues inflationnistes épisode après épisode)
+        enemiesPerWave = baseEnemiesPerWave;
+        enemiesInWave = enemiesPerWave;
+
+        StartCoroutine(SpawnLoopRoutine());
+    }
+
+    // ==================== BOUCLE DE VAGUES (inchangée) ====================
 
     // Enchaîne les vagues : spawn, attend que tous les ennemis soient morts, vague suivante
     System.Collections.IEnumerator SpawnLoopRoutine()

@@ -113,7 +113,7 @@ par renforcement appliqué au jeu vidéo.
 - [X] Stage 4 — Ravins + zones de mort
 - [X] Stage 5 — Bouclier + pénalité de vitesse sur swing raté
 - [X] Stage 6 — Pics + explosions colorées (VFX)
-- [-] Stage 7 — Intégration ML-Agents (observations/actions/rewards)
+- [ ] Stage 7 — Intégration ML-Agents (observations/actions/rewards)
 - [ ] Stage 8 — Entraînement + tuning des récompenses
 - [ ] Stage 9 — Cinématique d'intro (pont qui s'écroule)
 - [ ] Stage 10 — Polish, GIF de démo, release

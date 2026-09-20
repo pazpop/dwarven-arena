@@ -74,11 +74,34 @@ public class GameManager : MonoBehaviour
         if (player != null)
         {
             ExplosionEffect.Spawn(player.transform.position,
-                                   new Color(0.9f, 0.1f, 0.1f), 22, 6f); // rouge
-            Destroy(player);
+                                   new Color(0.9f, 0.1f, 0.1f), 22, 6f);
+            // Désactivation au lieu de Destroy : le DwarfAgent doit survivre à sa mort
+            // pour permettre les resets d'épisodes ML-Agents
+            player.GetComponent<PlayerMovement>()?.SetEntityActive(false);
         }
         Debug.Log($"Game Over — Score final : {score}");
-        // TODO: restart / UI
+    }
+
+    // Reset complet de la partie — appelé par DwarfAgent.OnEpisodeBegin()
+    public void ResetGame()
+    {
+        IsGameOver = false;
+        dwarfHP = dwarfMaxHP;
+        score = 0;
+        currentWave = 0;
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            PlayerMovement pm = player.GetComponent<PlayerMovement>();
+            pm?.ResetToStart();
+            pm?.SetEntityActive(true);
+        }
+
+        // Redémarrage des vagues — voir note sur SpawnManager ci-dessous
+        SpawnManager.Instance.StartTrainingEpisode();
+
+        Debug.Log("--- Nouvel épisode ---");
     }
 
     private void FlashPlayerRed()

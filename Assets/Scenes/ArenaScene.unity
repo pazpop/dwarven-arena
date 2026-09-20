@@ -926,7 +926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.ML-Agents::Unity.MLAgents.Policies.BehaviorParameters
   m_BrainParameters:
-    VectorObservationSize: 0
+    VectorObservationSize: 25
     NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0
@@ -978,6 +978,12 @@ MonoBehaviour:
   player: {fileID: 657906286}
   hammer: {fileID: 657906291}
   shield: {fileID: 657906298}
+  spikeTraps: []
+  observedEnemies: 3
+  killReward: 1
+  damagePenalty: -0.3
+  deathPenalty: -1
+  stepCost: -0.0005
 --- !u!114 &657906298
 MonoBehaviour:
   m_ObjectHideFlags: 0
