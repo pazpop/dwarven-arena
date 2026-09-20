@@ -58,7 +58,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    private void Die()
+    public void Die()
     {
         GameManager.Instance.RegisterKill();
         Destroy(gameObject);

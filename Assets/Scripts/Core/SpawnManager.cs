@@ -7,7 +7,6 @@ public class SpawnManager : MonoBehaviour
     
     private int enemiesAlive = 0;
     private int enemiesInWave = 0;
-    private bool spawning = false;
     
     private void Start()
     {
@@ -36,7 +35,7 @@ public class SpawnManager : MonoBehaviour
         if (spawnPoints.Length == 0)
         {
             // Fallback : position aléatoire autour de l'arène
-            float radius = 6f;
+            float radius = 4f;
             float angle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
             return new Vector3(Mathf.Cos(angle) * radius, -2f, 0);
         }
