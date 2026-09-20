@@ -11,6 +11,10 @@ public class PlayerMovement : MonoBehaviour
     public bool IsShielding { get; private set; } = false;
     public bool IsSlowPenalty { get; private set; } = false;
 
+    // Contrôle externe (agent ML) : quand actif, ExternalMoveDir remplace le clavier
+    public bool ExternalControl { get; set; } = false;
+    public Vector2 ExternalMoveDir { get; set; } = Vector2.zero;
+
     private Rigidbody2D rb;
     private float penaltyTimer = 0f;
     private float stunTimer = 0f;
@@ -22,21 +26,29 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        // Stun : contrôle bloqué pendant le knockback des pics
-        // (on laisse le knockback faire son œuvre sans être écrasé par les inputs)
         // NOTE: le stun gèle aussi le décompte de la pénalité de swing raté (early return
         // ci-dessous). Couplage assumé — impact négligeable tant que stun <= 0.4s.
         // Si des sources de stun multiples s'ajoutent, revoir cette interaction.
         if (stunTimer > 0f)
         {
             stunTimer -= Time.deltaTime;
-            return;
+            return; // Le nain est étourdi : on laisse le knockback faire son œuvre
         }
 
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
+        Vector2 moveDir;
 
-        Vector2 moveDir = new Vector2(moveX, moveY).normalized;
+        if (ExternalControl)
+        {
+            // Piloté par l'agent ML (DwarfAgent)
+            moveDir = ExternalMoveDir;
+        }
+        else
+        {
+            // Piloté au clavier
+            float moveX = Input.GetAxisRaw("Horizontal");
+            float moveY = Input.GetAxisRaw("Vertical");
+            moveDir = new Vector2(moveX, moveY).normalized;
+        }
 
         // Mémoriser la dernière direction non-nulle (pour viser le marteau)
         if (moveDir != Vector2.zero)
@@ -68,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
         penaltyTimer = duration;
     }
 
-    // Appelé par ShieldController à chaque frame
+    // Appelé par ShieldController et le DwarfAgent
     public void SetShielding(bool value)
     {
         IsShielding = value;

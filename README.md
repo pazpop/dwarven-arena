@@ -71,7 +71,7 @@ directement dans le build via Unity Sentis — pas besoin de Python pour la dém
 
 1. Ouvrir le dossier du projet dans Unity Hub
 2. Ouvrir la scène `Assets/Scenes/ArenaScene.unity`
-3. ▶ Play — WASD/flèches pour bouger, clic pour frapper *(selon avancement — voir Roadmap)*
+3. ▶ Play — WASD/flèches pour bouger, Espace pour frapper, clic gauche pour lever le bouclier
 
 ### Entraîner l'agent
 
@@ -107,13 +107,13 @@ par renforcement appliqué au jeu vidéo.
 ## 🗺️ Roadmap
 
 - [x] Stage 0 — Projet Unity, joueur déplaçable (WASD), physique 2D
-- [ ] Stage 1 — Ennemis (gobelins) avec IA de poursuite
-- [ ] Stage 2 — Système de vagues + spawn + 3 HP
-- [ ] Stage 3 — Marteau : zone de frappe, knockback, effet domino
-- [ ] Stage 4 — Ravins + zones de mort
-- [ ] Stage 5 — Bouclier + pénalité de vitesse sur swing raté
-- [ ] Stage 6 — Pics + explosions colorées (VFX)
-- [ ] Stage 7 — Intégration ML-Agents (observations/actions/rewards)
+- [X] Stage 1 — Ennemis (gobelins) avec IA de poursuite
+- [X] Stage 2 — Système de vagues + spawn + 3 HP
+- [X] Stage 3 — Marteau : zone de frappe, knockback, effet domino
+- [X] Stage 4 — Ravins + zones de mort
+- [X] Stage 5 — Bouclier + pénalité de vitesse sur swing raté
+- [X] Stage 6 — Pics + explosions colorées (VFX)
+- [-] Stage 7 — Intégration ML-Agents (observations/actions/rewards)
 - [ ] Stage 8 — Entraînement + tuning des récompenses
 - [ ] Stage 9 — Cinématique d'intro (pont qui s'écroule)
 - [ ] Stage 10 — Polish, GIF de démo, release

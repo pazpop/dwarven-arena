@@ -2,19 +2,17 @@ using UnityEngine;
 
 public class HammerController : MonoBehaviour
 {
-    [Header("Attaque")]
-    public float swingCooldown = 1.5f;     // Cooldown élevé : chaque coup compte
-    public float hitRadius = 1.2f;         // Portée du swing devant le nain
-    public float knockbackForce = 15f;
+    [Header("Marteau")]
     public int damage = 1;
-
-    [Header("Pénalité")]
-    public float missPenaltyDuration = 2f; // Durée de lenteur après un swing raté
-
-    private float lastSwingTime = -10f;
-    private PlayerMovement player;
+    public float hitRadius = 1.5f;
+    public float knockbackForce = 15f;
+    public float swingCooldown = 1.5f;
+    public float missPenaltyDuration = 2f;
 
     public bool IsOnCooldown => Time.time - lastSwingTime < swingCooldown;
+
+    private float lastSwingTime = -999f;
+    private PlayerMovement player;
 
     private void Awake()
     {
@@ -23,11 +21,19 @@ public class HammerController : MonoBehaviour
 
     private void Update()
     {
-        // Clic gauche OU Espace pour frapper
-        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
+        // Pilotage clavier seulement si l'agent ML ne contrôle pas le nain
+        if (player.ExternalControl) return;
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             TrySwing();
         }
+    }
+
+    // Appelé par le DwarfAgent (et le clavier via Update)
+    public void RequestSwing()
+    {
+        TrySwing();
     }
 
     private void TrySwing()
@@ -90,13 +96,13 @@ public class HammerController : MonoBehaviour
         }
     }
 
-    // Visualisation de la zone de frappe dans l'éditeur
+    // Visualisation de la zone de frappe réelle dans l'éditeur
     private void OnDrawGizmosSelected()
     {
-        if (player == null) return;
         Gizmos.color = Color.red;
-        Vector2 dir = Application.isPlaying ? player.LastMoveDirection : Vector2.right;
-        Vector2 center = (Vector2)transform.position + dir * (hitRadius * 0.6f);
-        Gizmos.DrawWireSphere(center, hitRadius);
+        // Hors Play mode, player (assigné dans Awake) est encore null : fallback à droite
+        Vector2 swingDir = (Application.isPlaying && player != null) ? player.LastMoveDirection : Vector2.right;
+        Vector2 hitCenter = (Vector2)transform.position + swingDir * (hitRadius * 0.6f);
+        Gizmos.DrawWireSphere(hitCenter, hitRadius);
     }
 }

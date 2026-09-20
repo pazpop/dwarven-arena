@@ -2,45 +2,73 @@ using UnityEngine;
 
 public class ShieldController : MonoBehaviour
 {
-    [Header("Stats")]
-    public float knockbackForce = 4f;   // Micro-poussée des ennemis au contact
+    [Header("Bouclier")]
+    public float microPushForce = 8f;
 
     private PlayerMovement player;
-    private Rigidbody2D rb;
-    private SpriteRenderer dwarfRenderer;
+    private SpriteRenderer spriteRenderer;
+    private Color originalColor;
+    private bool wasShielding;
 
     private void Awake()
     {
         player = GetComponent<PlayerMovement>();
-        rb = GetComponent<Rigidbody2D>();
-        dwarfRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer != null)
+        {
+            originalColor = spriteRenderer.color;
+        }
     }
 
     private void Update()
     {
-        // Clic droit OU Maj pour lever le bouclier
-        bool shielding = Input.GetKey(KeyCode.Mouse1) || Input.GetKey(KeyCode.LeftShift);
-        player.SetShielding(shielding);
+        // Pilotage clavier seulement si l'agent ML ne contrôle pas le nain
+        if (player.ExternalControl) return;
 
-        // Feedback visuel temporaire : nain bleuté quand le bouclier est levé
-        if (dwarfRenderer != null)
+        bool holding = Input.GetMouseButton(0);
+        RequestShield(holding);
+    }
+
+    // Appelé par le DwarfAgent (et le clavier via Update)
+    public void RequestShield(bool active)
+    {
+        player.SetShielding(active);
+
+        // Teinte visuelle : bleu quand le bouclier est levé
+        if (spriteRenderer != null)
         {
-            dwarfRenderer.color = shielding ? new Color(0.6f, 0.6f, 1f) : Color.white;
+            spriteRenderer.color = active
+                ? new Color(0.4f, 0.55f, 1f)   // bleu
+                : originalColor;
+        }
+
+        // Détection front montant pour la micro-poussée
+        if (active && !wasShielding)
+        {
+            MicroPushNearbyEnemies();
+        }
+        wasShielding = active;
+    }
+
+    // Micro-poussée des ennemis proches au moment du blocage
+    private void MicroPushNearbyEnemies()
+    {
+        Collider2D[] nearby = Physics2D.OverlapCircleAll(transform.position, 1.2f);
+        foreach (var col in nearby)
+        {
+            EnemyAI enemy = col.GetComponent<EnemyAI>();
+            if (enemy != null)
+            {
+                Vector2 dir = ((Vector2)enemy.transform.position - (Vector2)transform.position).normalized;
+                enemy.GetComponent<Rigidbody2D>()?.AddForce(dir * microPushForce, ForceMode2D.Impulse);
+            }
         }
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    // Visualisation du rayon de la micro-poussée dans l'éditeur
+    private void OnDrawGizmosSelected()
     {
-        // Micro-poussée des ennemis collés au nain quand le bouclier est levé
-        if (!player.IsShielding) return;
-
-        EnemyAI enemy = collision.gameObject.GetComponent<EnemyAI>();
-        if (enemy == null) return;
-
-        Rigidbody2D enemyRb = enemy.GetComponent<Rigidbody2D>();
-        if (enemyRb == null) return;
-
-        Vector2 dir = ((Vector2)collision.transform.position - rb.position).normalized;
-        enemyRb.AddForce(dir * knockbackForce, ForceMode2D.Force);
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, 1.2f);
     }
 }
