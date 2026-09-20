@@ -11,6 +11,11 @@ public class HammerController : MonoBehaviour
 
     public bool IsOnCooldown => Time.time - lastSwingTime < swingCooldown;
 
+    // Fraction du cooldown restant pour les observations du DwarfAgent (7b)
+    // 0 = marteau prêt, 1 = vient de frapper
+    public float CooldownFraction =>
+        Mathf.Clamp01(1f - (Time.time - lastSwingTime) / swingCooldown);
+
     private float lastSwingTime = -999f;
     private PlayerMovement player;
 
@@ -96,12 +101,13 @@ public class HammerController : MonoBehaviour
         }
     }
 
-    // Visualisation de la zone de frappe réelle dans l'éditeur
+    // Visualisation de la vraie zone de frappe dans l'éditeur
     private void OnDrawGizmosSelected()
     {
+        if (!Application.isPlaying || player == null) return;
+
         Gizmos.color = Color.red;
-        // Hors Play mode, player (assigné dans Awake) est encore null : fallback à droite
-        Vector2 swingDir = (Application.isPlaying && player != null) ? player.LastMoveDirection : Vector2.right;
+        Vector2 swingDir = player.LastMoveDirection;
         Vector2 hitCenter = (Vector2)transform.position + swingDir * (hitRadius * 0.6f);
         Gizmos.DrawWireSphere(hitCenter, hitRadius);
     }

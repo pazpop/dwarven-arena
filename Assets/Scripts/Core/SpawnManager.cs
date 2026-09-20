@@ -7,6 +7,11 @@ public class SpawnManager : MonoBehaviour
     public GameObject enemyPrefab;  // Goblin.prefab
     public Transform[] spawnPoints; // Positions de spawn
 
+    [Header("Vagues")]
+    public int enemiesPerWave = 5;
+    public int enemiesPerWaveIncrease = 2; // Courbe progressive
+    public float spawnDelay = 2f;
+
     private int enemiesAlive = 0;
     private int enemiesInWave = 0;
 
@@ -17,7 +22,7 @@ public class SpawnManager : MonoBehaviour
 
     private void Start()
     {
-        enemiesInWave = GameManager.Instance.enemiesPerWave;
+        enemiesInWave = enemiesPerWave;
         StartCoroutine(SpawnLoopRoutine());
     }
 
@@ -36,7 +41,8 @@ public class SpawnManager : MonoBehaviour
             if (GameManager.Instance.IsGameOver) yield break;
 
             GameManager.Instance.NextWave();
-            enemiesInWave = GameManager.Instance.enemiesPerWave;
+            enemiesPerWave += enemiesPerWaveIncrease;
+            enemiesInWave = enemiesPerWave;
         }
     }
 
@@ -46,7 +52,7 @@ public class SpawnManager : MonoBehaviour
         {
             if (GameManager.Instance.IsGameOver) yield break;
             SpawnEnemy();
-            yield return new WaitForSeconds(GameManager.Instance.spawnDelay);
+            yield return new WaitForSeconds(spawnDelay);
         }
     }
 

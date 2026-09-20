@@ -1343,11 +1343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3b6845637744e64e8eccfa8204ae388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  dwarfHP: 3
-  score: 0
-  currentWave: 1
-  enemiesPerWave: 5
-  spawnDelay: 2
+  dwarfMaxHP: 3
 --- !u!4 &1473774136
 Transform:
   m_ObjectHideFlags: 0
@@ -1357,7 +1353,7 @@ Transform:
   m_GameObject: {fileID: 1473774134}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7438, y: -0.6303, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1542,7 +1538,7 @@ Transform:
   m_GameObject: {fileID: 1996144148}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7438, y: -0.6303, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1562,6 +1558,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpawnManager
   enemyPrefab: {fileID: 5327000132904157395, guid: d5127423eb3bd3243ba49918c7bd04d9, type: 3}
   spawnPoints: []
+  enemiesPerWave: 5
+  enemiesPerWaveIncrease: 2
+  spawnDelay: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

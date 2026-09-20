@@ -3,37 +3,37 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    
-    [Header("Vies")]
-    public int dwarfHP = 3;
-    
-    [Header("Score")]
-    public int score = 0;
-    
-    [Header("Vagues")]
-    public int currentWave = 1;
-    public int enemiesPerWave = 5;
-    public float spawnDelay = 2f;
+
+    [Header("Nain")]
+    public int dwarfMaxHP = 3;
+
+    private int dwarfHP;
+    private int score;
+    private int currentWave;
 
     public bool IsGameOver { get; private set; } = false;
 
+    // Lecture seule pour les observations du DwarfAgent (7b)
+    public int CurrentDwarfHP => dwarfHP;
+    public int Score => score;
+    public int CurrentWave => currentWave;
+
     private void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        dwarfHP = dwarfMaxHP;
     }
-    
-    public void RegisterKill()
+
+    public void RegisterKill(int points = 10)
     {
-        score += 10;
+        if (IsGameOver) return;
+        score += points;
         Debug.Log($"Score : {score}");
-    }
-    
-    public void NextWave()
-    {
-        currentWave++;
-        enemiesPerWave += 2; // Courbe progressive
-        Debug.Log($"Vague {currentWave} — Ennemis : {enemiesPerWave}");
     }
 
     public void TakeDamage()
@@ -51,13 +51,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Mort instantanée (chute dans un ravin), indépendante des HP restants
+    // Nain tombé dans un ravin (DeathZone) — mort instantanée
     public void InstantKillPlayer()
     {
         if (IsGameOver) return;
-
         dwarfHP = 0;
         GameOver();
+    }
+
+    public void NextWave()
+    {
+        if (IsGameOver) return;
+        currentWave++;
+        Debug.Log($"--- Vague {currentWave} ---");
     }
 
     void GameOver()
@@ -94,7 +100,6 @@ public class GameManager : MonoBehaviour
         float elapsed = 0f;
         while (elapsed < 0.15f)
         {
-            // Si le nain meurt pendant le flash, on arrête proprement
             if (renderer == null) yield break;
             elapsed += Time.deltaTime;
             yield return null;
