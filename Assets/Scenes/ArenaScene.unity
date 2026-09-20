@@ -396,6 +396,8 @@ GameObject:
   - component: {fileID: 657906287}
   - component: {fileID: 657906286}
   - component: {fileID: 657906290}
+  - component: {fileID: 657906291}
+  - component: {fileID: 657906292}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -554,6 +556,37 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &657906291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657906285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da808dc9f38641f4f9ab622c8fece24f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HammerController
+  swingCooldown: 1.5
+  hitRadius: 1.2
+  knockbackForce: 12
+  damage: 1
+  hammerVisual: {fileID: 0}
+--- !u!114 &657906292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657906285}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4b61b1f9c3f2b9409d0e810b6f8bf0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DebugHammerArea
+  radius: 1.2
+  color: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
