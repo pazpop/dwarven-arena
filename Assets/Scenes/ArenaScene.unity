@@ -580,6 +580,7 @@ GameObject:
   - component: {fileID: 657906290}
   - component: {fileID: 657906291}
   - component: {fileID: 657906292}
+  - component: {fileID: 657906293}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -599,7 +600,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d02959a7473de048b888ca24dc6cf1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  speed: 5
+  normalSpeed: 5
+  slowSpeed: 3
+  shieldSpeedMult: 0.7
 --- !u!50 &657906287
 Rigidbody2D:
   serializedVersion: 5
@@ -754,7 +757,7 @@ MonoBehaviour:
   hitRadius: 1.2
   knockbackForce: 12
   damage: 1
-  hammerVisual: {fileID: 0}
+  missPenaltyDuration: 2
 --- !u!114 &657906292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -769,6 +772,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DebugHammerArea
   radius: 1.2
   color: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &657906293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657906285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7549ede9e1232418570fc6651ec80a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShieldController
+  knockbackForce: 4
 --- !u!1 &704359719
 GameObject:
   m_ObjectHideFlags: 0

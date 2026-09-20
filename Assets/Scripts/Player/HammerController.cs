@@ -5,11 +5,11 @@ public class HammerController : MonoBehaviour
     [Header("Attaque")]
     public float swingCooldown = 1.5f;     // Cooldown élevé : chaque coup compte
     public float hitRadius = 1.2f;         // Portée du swing devant le nain
-    public float knockbackForce = 12f;
+    public float knockbackForce = 15f;
     public int damage = 1;
 
-    [Header("Références")]
-    public Transform hammerVisual;         // Optionnel : petit sprite de tête de marteau
+    [Header("Pénalité")]
+    public float missPenaltyDuration = 2f; // Durée de lenteur après un swing raté
 
     private float lastSwingTime = -10f;
     private PlayerMovement player;
@@ -59,8 +59,9 @@ public class HammerController : MonoBehaviour
 
         if (enemiesHit == 0)
         {
-            // Swing raté : prévenir le PlayerMovement (pénalité au Stage 5)
-            Debug.Log("Swing raté !");
+            // Swing raté : le nain traîne son marteau (pénalité de vitesse)
+            player.ApplyMissPenalty(missPenaltyDuration);
+            Debug.Log("Swing raté ! Pénalité de vitesse appliquée.");
         }
         else
         {
@@ -68,7 +69,7 @@ public class HammerController : MonoBehaviour
         }
     }
 
-    // Visualisation de la zone de frappe dans l'éditeur (très pratique!)
+    // Visualisation de la zone de frappe dans l'éditeur
     private void OnDrawGizmosSelected()
     {
         if (player == null) return;

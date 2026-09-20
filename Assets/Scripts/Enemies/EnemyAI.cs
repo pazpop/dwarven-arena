@@ -7,8 +7,8 @@ public class EnemyAI : MonoBehaviour
     public int damage = 1;
 
     [Header("Santé / knockback")]
-    public int health = 2;             // Gobelin : 2 coups de marteau
-    public float knockbackDamping = 3f; // Rapidité de récupération après poussée
+    public int health = 2;               // Gobelin : 2 coups de marteau
+    public float knockbackDamping = 3f;  // Rapidité de récupération après poussée
 
     private Transform target;
     private Rigidbody2D rb;
@@ -31,6 +31,7 @@ public class EnemyAI : MonoBehaviour
         Vector2 dir = ((Vector2)target.position - rb.position).normalized;
         rb.AddForce(dir * moveForce);
 
+        // Limiter la vitesse max
         if (rb.linearVelocity.magnitude > speed)
         {
             rb.linearVelocity = rb.linearVelocity.normalized * speed;
@@ -53,6 +54,11 @@ public class EnemyAI : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            PlayerMovement pm = collision.gameObject.GetComponent<PlayerMovement>();
+
+            // Bouclier levé = dégâts annulés
+            if (pm != null && pm.IsShielding) return;
+
             GameManager.Instance.TakeDamage();
             Destroy(gameObject);
         }
