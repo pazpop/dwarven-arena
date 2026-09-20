@@ -55,18 +55,26 @@ public class EnemyAI : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerMovement pm = collision.gameObject.GetComponent<PlayerMovement>();
-
-            // Bouclier levé = dégâts annulés
             if (pm != null && pm.IsShielding) return;
 
+            // Suicide : dégâts au nain, mort SANS score (anti-reward-hacking)
+            ExplodeWithoutScore();
             GameManager.Instance.TakeDamage();
-            Destroy(gameObject);
         }
+    }
+
+    private void ExplodeWithoutScore()
+    {
+        ExplosionEffect.Spawn(transform.position, new Color(0.1f, 0.5f, 0.1f)); // vert sombre
+        if (SpawnManager.Instance != null) SpawnManager.Instance.OnEnemyDied();
+        Destroy(gameObject);
     }
 
     public void Die()
     {
+        ExplosionEffect.Spawn(transform.position, new Color(0.2f, 0.9f, 0.2f)); // vert
         GameManager.Instance.RegisterKill();
+        if (SpawnManager.Instance != null) SpawnManager.Instance.OnEnemyDied();
         Destroy(gameObject);
     }
 }

@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private float penaltyTimer = 0f;
+    private float stunTimer = 0f;
 
     private void Awake()
     {
@@ -21,6 +22,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        // Stun : contrôle bloqué pendant le knockback des pics
+        // (on laisse le knockback faire son œuvre sans être écrasé par les inputs)
+        // NOTE: le stun gèle aussi le décompte de la pénalité de swing raté (early return
+        // ci-dessous). Couplage assumé — impact négligeable tant que stun <= 0.4s.
+        // Si des sources de stun multiples s'ajoutent, revoir cette interaction.
+        if (stunTimer > 0f)
+        {
+            stunTimer -= Time.deltaTime;
+            return;
+        }
+
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
@@ -38,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
         rb.linearVelocity = moveDir * currentSpeed;
 
-        // Gestion du timer de pénalité
+        // Gestion du timer de pénalité (swing raté)
         if (IsSlowPenalty)
         {
             penaltyTimer -= Time.deltaTime;
@@ -60,5 +72,12 @@ public class PlayerMovement : MonoBehaviour
     public void SetShielding(bool value)
     {
         IsShielding = value;
+    }
+
+    // Appelé par SpikeTrap : éjection + perte de contrôle temporaire
+    public void ApplyStun(float duration, Vector2 ejection)
+    {
+        stunTimer = duration;
+        rb.linearVelocity = ejection;
     }
 }

@@ -35,10 +35,12 @@ public class ShieldController : MonoBehaviour
         if (!player.IsShielding) return;
 
         EnemyAI enemy = collision.gameObject.GetComponent<EnemyAI>();
-        if (enemy != null)
-        {
-            Vector2 dir = ((Vector2)collision.transform.position - rb.position).normalized;
-            enemy.GetComponent<Rigidbody2D>().AddForce(dir * knockbackForce, ForceMode2D.Force);
-        }
+        if (enemy == null) return;
+
+        Rigidbody2D enemyRb = enemy.GetComponent<Rigidbody2D>();
+        if (enemyRb == null) return;
+
+        Vector2 dir = ((Vector2)collision.transform.position - rb.position).normalized;
+        enemyRb.AddForce(dir * knockbackForce, ForceMode2D.Force);
     }
 }

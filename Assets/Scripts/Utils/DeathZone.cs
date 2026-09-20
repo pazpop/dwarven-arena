@@ -8,7 +8,12 @@ public class DeathZone : MonoBehaviour
         if (enemy != null)
         {
             enemy.Die();  // Réutilise le kill du GameManager (score +10)
+            return;
         }
-        // Le nain a sa propre logique de mort, on le gèrera bientôt
+
+        if (other.CompareTag("Player"))
+        {
+            GameManager.Instance.InstantKillPlayer();
+        }
     }
 }
