@@ -36,13 +36,36 @@ public class HammerController : MonoBehaviour
 
         lastSwingTime = Time.time;
 
-        // Direction de frappe = dernier sens de déplacement du nain
-        Vector2 swingDir = player.LastMoveDirection;
+        // --- AUTO-VISÉE : chercher l'ennemi le plus proche dans le rayon d'attaque ---
+        Vector2 swingDir = player.LastMoveDirection;  // fallback : direction de déplacement
+        Collider2D[] nearby = Physics2D.OverlapCircleAll(transform.position, hitRadius * 1.4f);
+
+        EnemyAI nearestEnemy = null;
+        float nearestDist = float.MaxValue;
+
+        foreach (var col in nearby)
+        {
+            EnemyAI enemy = col.GetComponent<EnemyAI>();
+            if (enemy != null)
+            {
+                float dist = Vector2.Distance(transform.position, enemy.transform.position);
+                if (dist < nearestDist)
+                {
+                    nearestDist = dist;
+                    nearestEnemy = enemy;
+                }
+            }
+        }
+
+        // S'il y a un ennemi proche : viser automatiquement vers lui
+        if (nearestEnemy != null)
+        {
+            swingDir = ((Vector2)nearestEnemy.transform.position - (Vector2)transform.position).normalized;
+        }
 
         // Zone de frappe DEVANT le nain (centre décalé)
         Vector2 hitCenter = (Vector2)transform.position + swingDir * (hitRadius * 0.6f);
 
-        // Détection des ennemis touchés
         Collider2D[] hits = Physics2D.OverlapCircleAll(hitCenter, hitRadius);
 
         int enemiesHit = 0;
@@ -51,7 +74,6 @@ public class HammerController : MonoBehaviour
             EnemyAI enemy = hit.GetComponent<EnemyAI>();
             if (enemy != null)
             {
-                // Pousser l'ennemi dans la direction du swing
                 enemy.TakeHit(damage, swingDir.normalized * knockbackForce);
                 enemiesHit++;
             }
@@ -59,7 +81,6 @@ public class HammerController : MonoBehaviour
 
         if (enemiesHit == 0)
         {
-            // Swing raté : le nain traîne son marteau (pénalité de vitesse)
             player.ApplyMissPenalty(missPenaltyDuration);
             Debug.Log("Swing raté ! Pénalité de vitesse appliquée.");
         }

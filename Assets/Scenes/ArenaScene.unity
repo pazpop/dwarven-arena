@@ -754,7 +754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HammerController
   swingCooldown: 1.5
-  hitRadius: 1.2
+  hitRadius: 1.5
   knockbackForce: 12
   damage: 1
   missPenaltyDuration: 2
