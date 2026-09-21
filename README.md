@@ -4,7 +4,7 @@
 
 ![Unity](https://img.shields.io/badge/Unity-6.0-blueviolet)
 ![ML-Agents](https://img.shields.io/badge/ML--Agents-Unity-informational)
-![License](https://img.shields.io/badge/licence-%C3%A0%20d%C3%A9finir-orange)
+![License](https://img.shields.io/badge/licence-MIT-green)
 
 ## 🎯 Concept
 
@@ -113,7 +113,7 @@ par renforcement appliqué au jeu vidéo.
 - [X] Stage 4 — Ravins + zones de mort
 - [X] Stage 5 — Bouclier + pénalité de vitesse sur swing raté
 - [X] Stage 6 — Pics + explosions colorées (VFX)
-- [ ] Stage 7 — Intégration ML-Agents (observations/actions/rewards)
+- [X] Stage 7 — Intégration ML-Agents (observations/actions/rewards) — voir [POC_IA_ML-AGENTS.md](POC_IA_ML-AGENTS.md) pour le détail des tests et résultats
 - [ ] Stage 8 — Entraînement + tuning des récompenses
 - [ ] Stage 9 — Cinématique d'intro (pont qui s'écroule)
 - [ ] Stage 10 — Polish, GIF de démo, release
@@ -129,4 +129,4 @@ sera crédité ici conformément à sa licence.*
 
 ---
 
-*Licence : à définir (probablement MIT pour le code, avec crédits assets dédiés)*
+*Licence : MIT pour le code (voir [LICENSE](LICENSE)), crédits assets dédiés ci-dessus*
