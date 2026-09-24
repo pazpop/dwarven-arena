@@ -95,9 +95,11 @@ public class DwarfAgent : Agent
         AddReward(stepCost);
 
         // --- Mort : fin d'épisode avec sanction ---
+        // AddReward (pas SetReward) : s'ajoute au damagePenalty/stepCost déjà
+        // appliqués plus haut cette même étape, au lieu de les écraser.
         if (gm.IsGameOver)
         {
-            SetReward(deathPenalty);
+            AddReward(deathPenalty);
             EndEpisode();   // déclenchera OnEpisodeBegin → ResetGame()
             return;
         }

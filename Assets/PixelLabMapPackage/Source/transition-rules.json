@@ -1,0 +1,12 @@
+{
+  "transitions": [
+    {
+      "from": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+      "to": "packed dirt and weathered stone arena floor, battle-worn earth",
+      "fromId": 1,
+      "toId": 2,
+      "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+      "transitionSize": 0.25
+    }
+  ]
+}

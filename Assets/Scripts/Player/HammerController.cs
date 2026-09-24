@@ -16,12 +16,16 @@ public class HammerController : MonoBehaviour
     public float CooldownFraction =>
         Mathf.Clamp01(1f - (Time.time - lastSwingTime) / swingCooldown);
 
+    private static readonly int AttackHash = Animator.StringToHash("Attack");
+
     private float lastSwingTime = -999f;
     private PlayerMovement player;
+    private Animator animator;
 
     private void Awake()
     {
         player = GetComponent<PlayerMovement>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -46,6 +50,7 @@ public class HammerController : MonoBehaviour
         if (IsOnCooldown) return;
 
         lastSwingTime = Time.time;
+        if (animator != null) animator.SetTrigger(AttackHash);
 
         // --- AUTO-VISÉE : chercher l'ennemi le plus proche dans le rayon d'attaque ---
         Vector2 swingDir = player.LastMoveDirection;  // fallback : direction de déplacement

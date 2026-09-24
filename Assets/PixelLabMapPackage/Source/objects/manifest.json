@@ -1,0 +1,84 @@
+{
+  "version": "1.0.0",
+  "totalObjects": 3,
+  "objects": [
+    {
+      "id": "36372011-c71b-454b-9a8b-3e12b01b20eb",
+      "name": "a grid of sharp triangular met",
+      "filename": "36372011-c71b-454b-9a8b-3e12b01b20eb.png",
+      "boundingBox": {
+        "x": 344,
+        "y": 336,
+        "width": 48,
+        "height": 48
+      },
+      "groundBounds": {
+        "x": 345.0,
+        "y": 371.0,
+        "width": 46.0,
+        "height": 12.0
+      },
+      "layer": 1,
+      "visible": true,
+      "locked": false,
+      "description": "Object: a grid of sharp triangular met (unknown)",
+      "metadata": {
+        "lastEdited": "2026-09-24T18:48:42.254905+00:00",
+        "generatedAt": "2026-09-24T18:48:42.254894+00:00"
+      },
+      "isProgress": false
+    },
+    {
+      "id": "a0fff804-cf66-4d65-963e-c20b6fe93658",
+      "name": "a grid of sharp triangular met",
+      "filename": "a0fff804-cf66-4d65-963e-c20b6fe93658.png",
+      "boundingBox": {
+        "x": 216,
+        "y": 464,
+        "width": 48,
+        "height": 48
+      },
+      "groundBounds": {
+        "x": 217.0,
+        "y": 499.0,
+        "width": 46.0,
+        "height": 12.0
+      },
+      "layer": 2,
+      "visible": true,
+      "locked": false,
+      "description": "Object: a grid of sharp triangular met (unknown)",
+      "metadata": {
+        "lastEdited": "2026-09-24T18:48:46.908608+00:00",
+        "generatedAt": "2026-09-24T18:48:46.908594+00:00"
+      },
+      "isProgress": false
+    },
+    {
+      "id": "0e7cbca8-e181-47c9-88cb-f78ea9e91721",
+      "name": "a grid of sharp triangular met",
+      "filename": "0e7cbca8-e181-47c9-88cb-f78ea9e91721.png",
+      "boundingBox": {
+        "x": 472,
+        "y": 240,
+        "width": 48,
+        "height": 48
+      },
+      "groundBounds": {
+        "x": 473.0,
+        "y": 275.0,
+        "width": 46.0,
+        "height": 12.0
+      },
+      "layer": 3,
+      "visible": true,
+      "locked": false,
+      "description": "Object: a grid of sharp triangular met (unknown)",
+      "metadata": {
+        "lastEdited": "2026-09-24T18:48:49.623403+00:00",
+        "generatedAt": "2026-09-24T18:48:49.623391+00:00"
+      },
+      "isProgress": false
+    }
+  ]
+}

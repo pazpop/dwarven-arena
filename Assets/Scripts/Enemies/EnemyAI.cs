@@ -10,12 +10,19 @@ public class EnemyAI : MonoBehaviour
     public int health = 2;               // Gobelin : 2 coups de marteau
     public float knockbackDamping = 3f;  // Rapidité de récupération après poussée
 
+    private static readonly int IsMovingHash = Animator.StringToHash("IsMoving");
+    private static readonly int MoveXHash = Animator.StringToHash("MoveX");
+    private static readonly int MoveYHash = Animator.StringToHash("MoveY");
+
     private Transform target;
     private Rigidbody2D rb;
+    private Animator animator;
+    private Vector2 lastFacing = Vector2.down;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null) target = playerObj.transform;
     }
@@ -35,6 +42,14 @@ public class EnemyAI : MonoBehaviour
         if (rb.linearVelocity.magnitude > speed)
         {
             rb.linearVelocity = rb.linearVelocity.normalized * speed;
+        }
+
+        if (animator != null)
+        {
+            if (dir != Vector2.zero) lastFacing = dir;
+            animator.SetBool(IsMovingHash, rb.linearVelocity.sqrMagnitude > 0.01f);
+            animator.SetFloat(MoveXHash, lastFacing.x);
+            animator.SetFloat(MoveYHash, lastFacing.y);
         }
     }
 

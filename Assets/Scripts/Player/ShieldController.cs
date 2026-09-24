@@ -5,19 +5,16 @@ public class ShieldController : MonoBehaviour
     [Header("Bouclier")]
     public float microPushForce = 8f;
 
+    private static readonly int IsProtectingHash = Animator.StringToHash("IsProtecting");
+
     private PlayerMovement player;
-    private SpriteRenderer spriteRenderer;
-    private Color originalColor;
+    private Animator animator;
     private bool wasShielding;
 
     private void Awake()
     {
         player = GetComponent<PlayerMovement>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        if (spriteRenderer != null)
-        {
-            originalColor = spriteRenderer.color;
-        }
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -33,14 +30,7 @@ public class ShieldController : MonoBehaviour
     public void RequestShield(bool active)
     {
         player.SetShielding(active);
-
-        // Teinte visuelle : bleu quand le bouclier est levé
-        if (spriteRenderer != null)
-        {
-            spriteRenderer.color = active
-                ? new Color(0.4f, 0.55f, 1f)   // bleu
-                : originalColor;
-        }
+        if (animator != null) animator.SetBool(IsProtectingHash, active);
 
         // Détection front montant pour la micro-poussée
         if (active && !wasShielding)

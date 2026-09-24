@@ -1,0 +1,3365 @@
+{
+  "format": "sparse",
+  "transitions": [
+    {
+      "x": 3,
+      "y": 3,
+      "edges": {
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 4,
+      "y": 3,
+      "edges": {
+        "south": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 5,
+      "y": 3,
+      "edges": {
+        "south": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 6,
+      "y": 3,
+      "edges": {
+        "south": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 7,
+      "y": 3,
+      "edges": {
+        "south": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 8,
+      "y": 3,
+      "edges": {
+        "south": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 9,
+      "y": 3,
+      "edges": {
+        "south": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 10,
+      "y": 3,
+      "edges": {
+        "south": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 11,
+      "y": 3,
+      "edges": {
+        "south": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 12,
+      "y": 3,
+      "edges": {
+        "south": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 13,
+      "y": 3,
+      "edges": {
+        "south": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 14,
+      "y": 3,
+      "edges": {
+        "south": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 15,
+      "y": 3,
+      "edges": {
+        "south": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 16,
+      "y": 3,
+      "edges": {
+        "south": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 17,
+      "y": 3,
+      "edges": {
+        "south": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 18,
+      "y": 3,
+      "edges": {
+        "south": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 19,
+      "y": 3,
+      "edges": {
+        "south": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 20,
+      "y": 3,
+      "edges": {
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "edges": {
+        "east": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "edges": {
+        "north": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "west": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "edges": {
+        "north": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 6,
+      "y": 4,
+      "edges": {
+        "north": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 7,
+      "y": 4,
+      "edges": {
+        "north": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 8,
+      "y": 4,
+      "edges": {
+        "north": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 9,
+      "y": 4,
+      "edges": {
+        "north": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 10,
+      "y": 4,
+      "edges": {
+        "north": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 11,
+      "y": 4,
+      "edges": {
+        "north": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 12,
+      "y": 4,
+      "edges": {
+        "north": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 13,
+      "y": 4,
+      "edges": {
+        "north": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 14,
+      "y": 4,
+      "edges": {
+        "north": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 15,
+      "y": 4,
+      "edges": {
+        "north": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 16,
+      "y": 4,
+      "edges": {
+        "north": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 17,
+      "y": 4,
+      "edges": {
+        "north": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 18,
+      "y": 4,
+      "edges": {
+        "north": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 19,
+      "y": 4,
+      "edges": {
+        "north": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "east": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 20,
+      "y": 4,
+      "edges": {
+        "west": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 3,
+      "y": 5,
+      "edges": {
+        "east": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 4,
+      "y": 5,
+      "edges": {
+        "west": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 19,
+      "y": 5,
+      "edges": {
+        "east": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 20,
+      "y": 5,
+      "edges": {
+        "west": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 3,
+      "y": 6,
+      "edges": {
+        "east": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 4,
+      "y": 6,
+      "edges": {
+        "west": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 19,
+      "y": 6,
+      "edges": {
+        "east": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 20,
+      "y": 6,
+      "edges": {
+        "west": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 3,
+      "y": 7,
+      "edges": {
+        "east": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 4,
+      "y": 7,
+      "edges": {
+        "west": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 19,
+      "y": 7,
+      "edges": {
+        "east": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 20,
+      "y": 7,
+      "edges": {
+        "west": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 3,
+      "y": 8,
+      "edges": {
+        "east": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 4,
+      "y": 8,
+      "edges": {
+        "west": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 19,
+      "y": 8,
+      "edges": {
+        "east": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 20,
+      "y": 8,
+      "edges": {
+        "west": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 3,
+      "y": 9,
+      "edges": {
+        "east": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 4,
+      "y": 9,
+      "edges": {
+        "west": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 19,
+      "y": 9,
+      "edges": {
+        "east": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 20,
+      "y": 9,
+      "edges": {
+        "west": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 3,
+      "y": 10,
+      "edges": {
+        "east": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 4,
+      "y": 10,
+      "edges": {
+        "west": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 19,
+      "y": 10,
+      "edges": {
+        "east": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 20,
+      "y": 10,
+      "edges": {
+        "west": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 3,
+      "y": 11,
+      "edges": {
+        "east": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 4,
+      "y": 11,
+      "edges": {
+        "west": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 19,
+      "y": 11,
+      "edges": {
+        "east": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 20,
+      "y": 11,
+      "edges": {
+        "west": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 3,
+      "y": 12,
+      "edges": {
+        "east": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 4,
+      "y": 12,
+      "edges": {
+        "west": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 19,
+      "y": 12,
+      "edges": {
+        "east": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 20,
+      "y": 12,
+      "edges": {
+        "west": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 3,
+      "y": 13,
+      "edges": {
+        "east": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 4,
+      "y": 13,
+      "edges": {
+        "west": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 19,
+      "y": 13,
+      "edges": {
+        "east": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 20,
+      "y": 13,
+      "edges": {
+        "west": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 3,
+      "y": 14,
+      "edges": {
+        "east": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 4,
+      "y": 14,
+      "edges": {
+        "west": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 19,
+      "y": 14,
+      "edges": {
+        "east": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 20,
+      "y": 14,
+      "edges": {
+        "west": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 3,
+      "y": 15,
+      "edges": {
+        "east": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 4,
+      "y": 15,
+      "edges": {
+        "west": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 19,
+      "y": 15,
+      "edges": {
+        "east": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 20,
+      "y": 15,
+      "edges": {
+        "west": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 3,
+      "y": 16,
+      "edges": {
+        "east": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 4,
+      "y": 16,
+      "edges": {
+        "west": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 19,
+      "y": 16,
+      "edges": {
+        "east": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 20,
+      "y": 16,
+      "edges": {
+        "west": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 3,
+      "y": 17,
+      "edges": {
+        "east": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 4,
+      "y": 17,
+      "edges": {
+        "west": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 19,
+      "y": 17,
+      "edges": {
+        "east": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 20,
+      "y": 17,
+      "edges": {
+        "west": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 3,
+      "y": 18,
+      "edges": {
+        "east": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 4,
+      "y": 18,
+      "edges": {
+        "west": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 19,
+      "y": 18,
+      "edges": {
+        "east": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 20,
+      "y": 18,
+      "edges": {
+        "west": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 3,
+      "y": 19,
+      "edges": {
+        "east": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 4,
+      "y": 19,
+      "edges": {
+        "south": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "west": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 5,
+      "y": 19,
+      "edges": {
+        "south": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 6,
+      "y": 19,
+      "edges": {
+        "south": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 7,
+      "y": 19,
+      "edges": {
+        "south": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 8,
+      "y": 19,
+      "edges": {
+        "south": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 9,
+      "y": 19,
+      "edges": {
+        "south": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 10,
+      "y": 19,
+      "edges": {
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 14,
+      "y": 19,
+      "edges": {
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 15,
+      "y": 19,
+      "edges": {
+        "south": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 16,
+      "y": 19,
+      "edges": {
+        "south": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 17,
+      "y": 19,
+      "edges": {
+        "south": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 18,
+      "y": 19,
+      "edges": {
+        "south": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 19,
+      "y": 19,
+      "edges": {
+        "east": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "south": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 20,
+      "y": 19,
+      "edges": {
+        "west": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 3,
+      "y": 20,
+      "edges": {
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 4,
+      "y": 20,
+      "edges": {
+        "north": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 5,
+      "y": 20,
+      "edges": {
+        "north": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 6,
+      "y": 20,
+      "edges": {
+        "north": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 7,
+      "y": 20,
+      "edges": {
+        "north": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 8,
+      "y": 20,
+      "edges": {
+        "north": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 9,
+      "y": 20,
+      "edges": {
+        "north": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "east": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 10,
+      "y": 20,
+      "edges": {
+        "west": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 14,
+      "y": 20,
+      "edges": {
+        "east": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 15,
+      "y": 20,
+      "edges": {
+        "north": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "west": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 16,
+      "y": 20,
+      "edges": {
+        "north": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 17,
+      "y": 20,
+      "edges": {
+        "north": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 18,
+      "y": 20,
+      "edges": {
+        "north": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 19,
+      "y": 20,
+      "edges": {
+        "north": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 20,
+      "y": 20,
+      "edges": {
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 9,
+      "y": 21,
+      "edges": {
+        "east": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 10,
+      "y": 21,
+      "edges": {
+        "west": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 14,
+      "y": 21,
+      "edges": {
+        "east": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 15,
+      "y": 21,
+      "edges": {
+        "west": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 9,
+      "y": 22,
+      "edges": {
+        "east": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 10,
+      "y": 22,
+      "edges": {
+        "west": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 14,
+      "y": 22,
+      "edges": {
+        "east": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 15,
+      "y": 22,
+      "edges": {
+        "west": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 9,
+      "y": 23,
+      "edges": {
+        "east": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 10,
+      "y": 23,
+      "edges": {
+        "south": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "west": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 11,
+      "y": 23,
+      "edges": {
+        "south": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 12,
+      "y": 23,
+      "edges": {
+        "south": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 13,
+      "y": 23,
+      "edges": {
+        "south": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 14,
+      "y": 23,
+      "edges": {
+        "east": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "south": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southeast": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "southwest": {
+          "fromTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "toTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 15,
+      "y": 23,
+      "edges": {
+        "west": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 9,
+      "y": 24,
+      "edges": {
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 10,
+      "y": 24,
+      "edges": {
+        "north": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 11,
+      "y": 24,
+      "edges": {
+        "north": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 12,
+      "y": 24,
+      "edges": {
+        "north": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 13,
+      "y": 24,
+      "edges": {
+        "north": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northeast": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 14,
+      "y": 24,
+      "edges": {
+        "north": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        },
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    },
+    {
+      "x": 15,
+      "y": 24,
+      "edges": {
+        "northwest": {
+          "fromTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+          "toTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+          "tilesetId": "a4145e1b-6428-4818-815c-4d58dd487502",
+          "transitionSize": 0.25
+        }
+      }
+    }
+  ]
+}

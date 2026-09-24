@@ -18,7 +18,12 @@ public class PlayerMovement : MonoBehaviour
     public bool ExternalControl { get; set; } = false;
     public Vector2 ExternalMoveDir { get; set; } = Vector2.zero;
 
+    private static readonly int IsMovingHash = Animator.StringToHash("IsMoving");
+    private static readonly int MoveXHash = Animator.StringToHash("MoveX");
+    private static readonly int MoveYHash = Animator.StringToHash("MoveY");
+
     private Rigidbody2D rb;
+    private Animator animator;
     private float penaltyTimer = 0f;
     private float stunTimer = 0f;
     private Vector3 startPosition;
@@ -26,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         startPosition = transform.position;
     }
 
@@ -67,6 +73,16 @@ public class PlayerMovement : MonoBehaviour
         if (moveDir != Vector2.zero)
         {
             LastMoveDirection = moveDir;
+        }
+
+        if (animator != null)
+        {
+            animator.SetBool(IsMovingHash, moveDir != Vector2.zero);
+            // Le Blend Tree (8 directions, voir Assets/Editor/GenerateDwarvenArenaAnimations.cs)
+            // choisit le bon sprite via ces deux floats — sprites PixelLab réellement
+            // dessinés dans les 8 directions, plus besoin de flip gauche/droite.
+            animator.SetFloat(MoveXHash, LastMoveDirection.x);
+            animator.SetFloat(MoveYHash, LastMoveDirection.y);
         }
 
         // Choix de la vitesse selon l'état

@@ -1,0 +1,57 @@
+{
+  "version": "1.0.0",
+  "name": "Arena",
+  "exportDate": "2026-09-24T20:46:53.122217Z",
+  "engine": "pixellab-map-editor",
+  "mapConfig": {
+    "tileSize": 32,
+    "dimensions": {
+      "width": 24,
+      "height": 27,
+      "pixelWidth": 768,
+      "pixelHeight": 864
+    },
+    "boundingBox": {
+      "maxX": 23,
+      "maxY": 26,
+      "minX": 0,
+      "minY": 0
+    }
+  },
+  "terrains": [
+    {
+      "id": 1,
+      "name": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+      "color": "#6b7280",
+      "baseTileId": "f46bfe87-68ef-4b52-8e35-1e8611082b27",
+      "walkable": null
+    },
+    {
+      "id": 2,
+      "name": "packed dirt and weathered stone arena floor, battle-worn earth",
+      "color": "#92400e",
+      "baseTileId": "2168081f-456b-412f-82ec-c3de2ea4554b",
+      "walkable": null
+    }
+  ],
+  "tilesets": [
+    {
+      "id": "a4145e1b-6428-4818-815c-4d58dd487502",
+      "filename": "dark rocky chasm floor, jagged stones, ominous shadowy depths-packed dirt and weathered sto-078d9c1b.png",
+      "lowerTerrain": "dark rocky chasm floor, jagged stones, ominous shadowy depths",
+      "upperTerrain": "packed dirt and weathered stone arena floor, battle-worn earth",
+      "lowerTerrainId": 1,
+      "upperTerrainId": 2,
+      "transitionSize": 0.25,
+      "transitionDescription": "crumbling weathered stone cliff face, jagged cracks and loose rubble, dark shadowed crevices, rough gray rock streaked with dirt",
+      "tileSize": 32,
+      "gridLayout": "4x4",
+      "wangIndexMapping": "standard",
+      "view": "high top-down",
+      "metadataFilename": "a4145e1b-6428-4818-815c-4d58dd487502.json"
+    }
+  ],
+  "overlays": [],
+  "background": null,
+  "mapId": "7ed150ba-7f84-4442-aa4a-eb43d3ce15c3"
+}

@@ -99,7 +99,7 @@ public class SpawnManager : MonoBehaviour
 
     Vector3 GetRandomSpawnPoint()
     {
-        if (spawnPoints.Length == 0)
+        if (spawnPoints == null || spawnPoints.Length == 0)
         {
             // Fallback : position aléatoire autour de l'arène
             float radius = 4f;
