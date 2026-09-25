@@ -1,3 +1,5 @@
+// Déplacement du Nain (clavier ou agent ML), vitesse, animation directionnelle,
+// et les états partagés (bouclier, pénalité, stun) que lisent les autres scripts.
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -78,11 +80,18 @@ public class PlayerMovement : MonoBehaviour
         if (animator != null)
         {
             animator.SetBool(IsMovingHash, moveDir != Vector2.zero);
+
             // Le Blend Tree (8 directions, voir Assets/Editor/GenerateDwarvenArenaAnimations.cs)
             // choisit le bon sprite via ces deux floats — sprites PixelLab réellement
             // dessinés dans les 8 directions, plus besoin de flip gauche/droite.
-            animator.SetFloat(MoveXHash, LastMoveDirection.x);
-            animator.SetFloat(MoveYHash, LastMoveDirection.y);
+            // Pendant le blocage, ShieldController pilote ces mêmes floats (orientation
+            // vers l'ennemi le plus proche) : on ne doit pas les réécrire ici, sinon on
+            // écrase sa valeur avant que l'Animator ne la lise (Update -> Animation -> LateUpdate).
+            if (!IsShielding)
+            {
+                animator.SetFloat(MoveXHash, LastMoveDirection.x);
+                animator.SetFloat(MoveYHash, LastMoveDirection.y);
+            }
         }
 
         // Choix de la vitesse selon l'état
@@ -109,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
         penaltyTimer = duration;
     }
 
-    // Appelé par ShieldController et le DwarfAgent
+    // Appelé par ShieldController (clavier ou DwarfAgent passent tous les deux par RequestShield)
     public void SetShielding(bool value)
     {
         IsShielding = value;

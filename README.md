@@ -81,7 +81,7 @@ Ouvrir un terminal Git Bash à la racine du projet :
 python -m venv venv
 source venv/Scripts/activate
 pip install mlagents
-mlagents-learn ./ML-Agents/Configs/dwarven_arena_ppo.yaml --run-id=v1
+mlagents-learn docs/runs/dwarf_v02_config.yaml --run-id=dwarf_v02
 ```
 
 Suivi de l'entraînement :
@@ -109,38 +109,14 @@ aide précieuse pour combler mes lacunes Unity/C# tout au long du projet.
 
 ## 🗺️ Roadmap
 
-- [x] Stage 0 — Projet Unity, joueur déplaçable (WASD), physique 2D
-- [X] Stage 1 — Ennemis (gobelins) avec IA de poursuite
-- [X] Stage 2 — Système de vagues + spawn + 3 HP
-- [X] Stage 3 — Marteau : zone de frappe, knockback, effet domino
-- [X] Stage 4 — Ravins + zones de mort
-- [X] Stage 5 — Bouclier + pénalité de vitesse sur swing raté
-- [X] Stage 6 — Pics + explosions colorées (VFX)
-- [X] Stage 7 — Intégration ML-Agents (observations/actions/rewards) — voir [POC_IA_ML-AGENTS.md](POC_IA_ML-AGENTS.md) pour le détail des tests et résultats
-- [ ] Stage 8 — Remplacement des assets graphiques
-  - [x] Sprites du Nain et du Gobelin, tileset de sol et carte de l'arène — générés via [PixelLab](https://pixellab.ai)
-  - [x] Animations du Nain (idle/marche/attaque/protection) et du Gobelin (idle/marche) — générées via PixelLab
-  - [ ] Sprite et animations de l'Orque (voir Stage 8.5)
-  - [ ] Animation de mort, effets de particules (blood splatter)
-  - Ne touche ni la logique ni le modèle : l'IA se base sur les observations, pas les visuels
-- [ ] Stage 8.5 — Mécaniques décrites dans [GAMEPLAY.md](./GAMEPLAY.md) mais pas encore codées
-  - Orques (ennemi lourd/rare, mass=3, difficile à pousser) — actuellement `EnemyAI` est générique, seul le Goblin existe
-  - Multiplicateur de score en chaîne (pousser N ennemis en un swing rapporte plus que N kills séparés) — `RegisterKill()` n'ajoute pour l'instant qu'un score fixe
-- [ ] Stage 9 — Raffinement des hyperparamètres (et rewards)
-  - Reward shaping anti-camping : malus de proximité aux pics, ou bonus de proximité aux ennemis
-  - Curiosity (`reward_signals.curiosity`) si l'agent reste bloqué sur sa stratégie de camping
-  - Ajuster `learning_rate`/`batch_size` selon les courbes du run suivant
-  - Tester `lambd`/`beta` si l'exploration est insuffisante
-  - Objectif : un nain qui chasse activement les gobelins au lieu de camper
-- [ ] Stage 10 — Cinématique d'intro (pont qui s'écroule)
-- [ ] Stage 11 — Polish, GIF de démo, release
+Voir [ROADMAP.md](ROADMAP.md) pour le détail des stages et ce qui reste à faire.
 
 ## 🎨 Crédits assets
 
-- Sprites (Nain, Gobelin), animations, tileset de sol et carte de l'arène :
+- Sprites (Nain, Gobelin, Orc), animations, tileset de sol et carte de l'arène :
   générés via [PixelLab](https://pixellab.ai)
-
-*Section complétée au fur et à mesure de l'ajout d'autres assets.*
+- Décorations de l'arène (gravats, pilier, brasier/flamme, ossements, lierre,
+  mousse) et l'écran-titre : générés via [PixelLab](https://pixellab.ai)
 
 ## 🧑‍💻 Auteur
 

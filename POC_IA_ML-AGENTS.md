@@ -1,110 +1,99 @@
 # Dwarven Arena — POC : IA locale qui apprend à jouer (ML-Agents + PPO)
 
 > Objectif : démontrer qu'une IA entraînée **100 % en local** (Windows 11, RTX 3080) peut apprendre à jouer et survivre dans un jeu Unity 2D personnalisé.
-> Résultat : pipeline complet validé, premier modèle fonctionnel — avec ses limites.
 
-<p align="center">
-  <img src="docs/media/gameplay.gif" alt="Démo de l'IA en inférence">
-</p>
+Ce document décrit l'architecture de l'agent et comment fonctionne le pipeline
+d'entraînement — stable d'un run à l'autre. Chaque entraînement a son propre
+compte-rendu détaillé dans [`docs/runs/`](docs/runs/), avec ses courbes
+TensorBoard et son analyse. La conclusion en bas de page agrège les
+enseignements de tous les runs.
 
 ---
 
 ## 🎮 Le jeu
 
-**Dwarven Arena** est un top-down survival : un nain au marteau lourd (le carré blanc/bleu dans le gif) affronte des vagues de gobelins (vert) dans une arène truffée de ravins (ring-out mortel) et de pics (rectangle gris foncé). Chaque kill rapporte +10 points, chaque dégât coûte 1 HP.
+**Dwarven Arena** est un top-down survival : un nain au marteau lourd affronte
+des vagues de gobelins/orcs dans une arène truffée de ravins (ring-out mortel)
+et de pics. Chaque kill rapporte des points, chaque dégât coûte 1 HP. Détail
+complet du gameplay : [GAMEPLAY.md](GAMEPLAY.md).
 
 ---
 
-## 🤖 Configuration de l'agent (ML-Agents 4.1.0, Unity 6)
+## 🤖 Configuration de l'agent (ML-Agents, Unity 6)
 
 | Élément | Détail |
 |---|---|
-| **Agent** | `DwarfAgent.cs` — contrôle externe, bascule clavier ↔ IA |
+| **Agent** | `Assets/Scripts/Agents/DwarfAgent.cs` — contrôle externe, bascule clavier ↔ IA via `PlayerMovement.ExternalControl` |
 | **Actions** | 4 branches discrètes : déplacement X/Y, marteau, bouclier |
 | **Décisions** | 1 décision toutes les 5 frames (~12 Hz) |
 | **Observations** | 25 valeurs : état du nain (9), pics (4), 3 ennemis les plus proches (12) |
 | **Rewards** | Kill **+1.0** · dégât subi **−0.3** · mort **−1.0** · coût par step **−0.0005** |
 | **Anti reward-hacking** | Aucun point pour le suicide (ravins/pics), pics neutres pour les ennemis |
 
+Cette configuration évolue seulement quand l'agent lui-même change (nouvelle
+observation, nouveau reward...) — les runs qui utilisent la même version sont
+directement comparables entre eux.
+
 ---
 
-## 🚀 Entraînement (PPO)
+## 🚀 Le pipeline, étape par étape
 
-Fichier config : [`docs/dwarven_arena_ppo.yaml`](docs/dwarven_arena_ppo.yaml) (adapté du template PPO fourni par le repo [ml-agents](https://github.com/Unity-Technologies/ml-agents))
-*(batch 128, buffer 2048, lr 3e-4 décroissant, 2×256 hidden units, gamma 0.99)*
+### 1. Entraîner
 
 ```powershell
 # Terminal (venv ML-Agents activé)
-mlagents-learn docs/dwarven_arena_ppo.yaml --run-id=dwarf_v01
+mlagents-learn docs/runs/<config_du_run>.yaml --run-id=<nom_du_run>
 
 # Puis Play dans l'éditeur Unity quand "Start training by pressing the Play button" apparaît
 ```
 
-### Budget d'entraînement — ce qu'il a coûté
+Chaque run part d'un fichier de config dédié dans `docs/runs/` (copié/adapté du
+précédent) — ça garde une trace exacte des hyperparamètres utilisés pour
+chaque résultat documenté.
 
-| Métrique | Valeur |
-|---|---|
-| Steps | 3 000 000 |
-| Durée | ~5 h 05 sur RTX 3080, en local, sans GPU cloud |
-| Reward moyen final | 28.42 (≈ 30 kills/épisode avant mort) |
-| Longueur d'épisode | ~600 steps (~10 s), stable |
-| Signaux d'apprentissage visibles dès | ~1 h |
+### 2. Suivre l'entraînement
 
----
+```powershell
+tensorboard --logdir results
+```
 
-## 📊 Interpréter TensorBoard
+Sur `http://localhost:6006`, onglet Scalars — voir le détail des courbes à
+surveiller dans chaque doc de run.
 
-Courbes exportées depuis `http://localhost:6006` (onglet Scalars) :
+### 3. Importer le modèle entraîné dans Unity
 
-| Courbe | Ce qu'elle doit faire | Notre run |
-|---|---|---|
-| Cumulative Reward | Monter, puis se stabiliser | 24 → 28.4, plateau après 2M steps ✅ |
-| Policy/Entropy | Baisser mais pas à zéro (sinon sur-spécialisation) | 2.8 → 1.61 ✅ |
-| Losses/Value Loss | Descendre (meilleure prédiction des récompenses) | 0.14 → 0.06 ✅ |
-| Losses/Policy Loss | Stable/faible | ~0.068 ✅ |
-| Episode Length | S'allonger si l'agent survit mieux | Plat — voir limites ⚠️ |
-
-*Astuce : lisser à 0.6 (curseur Smoothing) pour lire la tendance sous le bruit.*
-
-![Cumulative Reward](docs/media/tensorboard_cumulative_reward.png)
-
-*Reward total moyen encaissé par épisode (un épisode = de l'apparition à la mort du nain). C'est la courbe la plus haut niveau : si elle ne monte pas, rien d'autre ne compte.*
-
-![Entropy](docs/media/tensorboard_entropy.png)
-
-*Incertitude de la politique : à quel point l'agent hésite encore entre plusieurs actions possibles dans une même situation. Une entropie qui baisse veut dire que l'agent devient plus confiant/déterministe dans ses choix — trop bas trop vite, et il se fige sur une stratégie sans avoir assez exploré.*
-
-![Episode Length](docs/media/tensorboard_episode_length.png)
-
-*Nombre de steps avant la mort du nain (proxy du temps de survie). Ici elle plafonne à ~600 steps sans progresser — signe que l'agent a trouvé un plateau de survie plutôt qu'une stratégie qui s'améliore, cohérent avec le comportement de camping observé plus bas.*
-
----
-
-## 📥 Importer le modèle dans Unity
-
-1. Copier `results/dwarf_v01/Dwarf/Dwarf.onnx` (le dernier checkpoint) vers `Assets/Models/` du projet Unity.
+1. Copier `results/<run-id>/Dwarf/Dwarf.onnx` (dernier checkpoint) vers `Assets/Models/`.
 2. Sur le GameObject du nain, composant **Behavior Parameters** :
    - **Behavior Type** : `Inference Only`
-   - **Model** : `Dwarf.onnx`
+   - **Model** : le `.onnx` copié
 3. ▶️ Play — l'IA contrôle le nain sans entraînement ni Python.
 
 ---
 
-## 🔍 Retour d'expérience (leçon n°1 du POC)
+## 📚 Historique des runs
 
-Le pipeline est validé de bout en bout : observations → rewards → PPO → modèle ONNX jouable dans Unity. Mais observer le modèle en inférence a révélé ce que les courbes cachaient : le nain campe derrière un pic — une stratégie « safe » localement optimale (~28 de reward) au lieu de la chasse agressive espérée. La variance ±1.5 du reward et l'entropie encore élevée le confirmaient.
-
-Ce que ça nous apprend :
-
-- Un reward moyen stable ne garantit pas un comportement fun : le reward shaping est le vrai métier du RL (*Reinforcement Learning*, apprentissage par renforcement — la famille de méthodes, dont PPO fait partie, où un agent apprend par essai-erreur en maximisant une récompense plutôt qu'à partir d'exemples étiquetés).
-- Regarder l'agent jouer est une étape de validation indispensable, les courbes TensorBoard ne suffisent pas.
-
-Prochaines itérations : malus de camping (distance min. aux pics), curiosity, reward shaping sur la proximité des ennemis, ou revoir le déplacement des gobelins en esquivant les pics en voulant aller vers le nain — avant de retoucher les hyperparamètres. Ensuite : remplacement des assets graphiques.
+| Run | Résumé | Détail |
+|---|---|---|
+| `dwarf_v01` | Pipeline validé de bout en bout ; l'agent trouve une stratégie de camping (près d'un pic) plutôt que la chasse agressive espérée | [docs/runs/dwarf_v01.md](docs/runs/dwarf_v01.md) |
 
 ---
 
-## ✅ Conclusion
+## ✅ Conclusion des entraînements
 
-Ce POC visait à valider un pipeline technique — il a fini par en dire plus sur le jeu lui-même. En poussant l'agent à optimiser froidement sa survie, sans intuition ni triche, le réseau de neurones a mis en évidence une faille de game design restée invisible en jouant soi-même : camper derrière un pic est une stratégie viable, ce qui va à l'encontre de l'expérience « chasse agressive » recherchée.
+*(Section mise à jour après chaque nouveau run — vue d'ensemble de ce que les
+entraînements successifs ont révélé, pas le détail d'un run en particulier.)*
 
-C'est la vraie valeur de cette approche pour la suite : le ML-Agents n'est pas seulement un mode démo, c'est un outil de test de gameplay — un testeur infatigable qui explore l'espace des stratégies sans a priori et révèle les angles morts du level design. Les prochaines itérations sur le comportement des gobelins et l'équilibrage de l'arène s'appuieront sur ce que cet agent a montré, avant de retenter un entraînement.
+Le premier run (`dwarf_v01`) a montré la vraie valeur de cette approche : le
+ML-Agents n'est pas seulement un mode démo, c'est un outil de test de
+gameplay — un testeur infatigable qui explore l'espace des stratégies sans a
+priori et révèle les angles morts du level design. En poussant l'agent à
+optimiser froidement sa survie, il a mis en évidence une faille de design
+(camper près d'un pic) restée invisible en jouant soi-même.
+
+Depuis ce run, plusieurs changements côté jeu visent directement ce
+comportement — les gobelins/orcs évitent maintenant activement les dangers au
+lieu de foncer dessus, ce qui change l'intérêt tactique de camper près d'un
+piège. Le prochain run permettra de voir si ce changement d'environnement,
+à lui seul, suffit à faire émerger un comportement plus agressif, ou si un
+reward shaping explicite (malus de camping, bonus de proximité aux ennemis)
+reste nécessaire.

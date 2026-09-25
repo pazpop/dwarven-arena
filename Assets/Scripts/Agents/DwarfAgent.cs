@@ -1,3 +1,5 @@
+// Agent ML-Agents (PPO) qui contrôle le Nain à la place du clavier : observations,
+// actions et rewards de l'entraînement — voir POC_IA_ML-AGENTS.md pour le détail.
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
@@ -21,11 +23,17 @@ public class DwarfAgent : Agent
     public float stepCost = -0.0005f;
 
     // Suivi des deltas pour les rewards par polling
-    private int lastKnownScore;
+    private int lastKnownKills;
     private int lastKnownHP;
 
     private bool pendingSwing = false;
     private bool pendingShieldState = false;
+
+    // Buffers réutilisés par CollectObservations pour la sélection des ennemis les
+    // plus proches — évite un FindObjectsByType + allocation de liste + tri à
+    // chaque décision (des millions de fois pendant l'entraînement)
+    private EnemyAI[] nearestEnemies;
+    private float[] nearestDistSq;
 
     public override void Initialize()
     {
@@ -53,6 +61,9 @@ public class DwarfAgent : Agent
         // Durée max d'un épisode : 3000 décisions × 5 frames ≈ 4 minutes de jeu.
         // Au-delà, l'épisode se termine (sans pénalité de mort) — évite les parties infinies.
         MaxStep = 3000;
+
+        nearestEnemies = new EnemyAI[observedEnemies];
+        nearestDistSq = new float[observedEnemies];
     }
 
     private void Update()
@@ -66,7 +77,7 @@ public class DwarfAgent : Agent
     public override void OnEpisodeBegin()
     {
         GameManager.Instance.ResetGame();
-        lastKnownScore = 0;
+        lastKnownKills = 0;
         lastKnownHP = GameManager.Instance.CurrentDwarfHP;
     }
 
@@ -79,11 +90,13 @@ public class DwarfAgent : Agent
         // --- Récompenses par détection de deltas (polling, zéro couplage avec le gameplay) ---
         var gm = GameManager.Instance;
 
-        if (gm.Score > lastKnownScore)
+        if (gm.Kills > lastKnownKills)
         {
-            // Chaque +10 de score = un kill validé (les suicides ne rapportent rien — anti-reward-hacking)
-            AddReward(killReward * (gm.Score - lastKnownScore) / 10f);
-            lastKnownScore = gm.Score;
+            // +1 reward par kill (Kills, pas Score : le score en points varie selon le
+            // type d'ennemi/le bonus de chaîne, le reward RL doit rester constant par
+            // kill — voir GameManager.RegisterEnemyKilled(). Suicides = pas de kill.
+            AddReward(killReward * (gm.Kills - lastKnownKills));
+            lastKnownKills = gm.Kills;
         }
 
         if (gm.CurrentDwarfHP < lastKnownHP)
@@ -172,23 +185,40 @@ public class DwarfAgent : Agent
         else { for (int i = 0; i < 4; i++) sensor.AddObservation(0f); }
 
         // --- Ennemis les plus proches (12) ---
-        var allEnemies = FindObjectsByType<EnemyAI>();
-        var validEnemies = new System.Collections.Generic.List<EnemyAI>(allEnemies.Length);
-        foreach (var e in allEnemies)
+        // Sélection des `observedEnemies` plus proches par insertion dans un petit
+        // buffer trié réutilisé (nearestEnemies/nearestDistSq) : évite le
+        // FindObjectsByType + l'allocation de liste + le tri complet d'avant,
+        // qui tournaient à chaque décision (des millions de fois à l'entraînement)
+        for (int i = 0; i < observedEnemies; i++)
         {
-            if (e != null) validEnemies.Add(e);
+            nearestEnemies[i] = null;
+            nearestDistSq[i] = float.MaxValue;
         }
 
-        validEnemies.Sort((a, b) =>
-            (pos - (Vector2)a.transform.position).sqrMagnitude
-                .CompareTo((pos - (Vector2)b.transform.position).sqrMagnitude));
+        foreach (var e in EnemyAI.Alive)
+        {
+            if (e == null) continue;
+
+            float distSq = (pos - (Vector2)e.transform.position).sqrMagnitude;
+            if (distSq >= nearestDistSq[observedEnemies - 1]) continue;
+
+            int insertAt = observedEnemies - 1;
+            while (insertAt > 0 && nearestDistSq[insertAt - 1] > distSq)
+            {
+                nearestDistSq[insertAt] = nearestDistSq[insertAt - 1];
+                nearestEnemies[insertAt] = nearestEnemies[insertAt - 1];
+                insertAt--;
+            }
+            nearestDistSq[insertAt] = distSq;
+            nearestEnemies[insertAt] = e;
+        }
 
         for (int i = 0; i < observedEnemies; i++)
         {
-            if (i < validEnemies.Count)
+            if (nearestEnemies[i] != null)
             {
-                Rigidbody2D erb = validEnemies[i].GetComponent<Rigidbody2D>();
-                Vector2 delta = (Vector2)validEnemies[i].transform.position - pos;
+                Rigidbody2D erb = nearestEnemies[i].GetComponent<Rigidbody2D>();
+                Vector2 delta = (Vector2)nearestEnemies[i].transform.position - pos;
                 sensor.AddObservation(delta.x / 6f);
                 sensor.AddObservation(delta.y / 4f);
                 sensor.AddObservation(delta.magnitude / 6f);

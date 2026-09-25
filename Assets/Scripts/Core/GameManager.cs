@@ -1,3 +1,6 @@
+// État central de la partie : HP, score, vagues, game over/reset. Point d'entrée
+// unique consulté par (presque) tous les autres scripts.
+using Unity.MLAgents;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -13,10 +16,19 @@ public class GameManager : MonoBehaviour
 
     public bool IsGameOver { get; private set; } = false;
 
-    // Lecture seule pour les observations du DwarfAgent (7b)
+    // Vrai pendant un entraînement mlagents-learn — sert à couper tout ce qui ne
+    // doit jamais s'exécuter côté entraînement (menu, logs de debug...)
+    public static bool IsTraining => Academy.Instance.IsCommunicatorOn;
+
+    // Lecture seule pour les observations/rewards du DwarfAgent
     public int CurrentDwarfHP => dwarfHP;
     public int Score => score;
-    public int CurrentWave => currentWave;
+
+    // Nombre de kills, indépendant des points (RegisterKill varie selon le type
+    // d'ennemi/le bonus de chaîne) — c'est CE compteur que DwarfAgent utilise pour
+    // le reward, afin qu'un kill vaille toujours +1, peu importe combien de points
+    // il rapporte au score affiché au joueur
+    public int Kills { get; private set; }
 
     private void Awake()
     {
@@ -33,7 +45,15 @@ public class GameManager : MonoBehaviour
     {
         if (IsGameOver) return;
         score += points;
-        Debug.Log($"Score : {score}");
+    }
+
+    // Appelé une seule fois par ennemi effectivement tué (voir EnemyAI.Die()) —
+    // distinct de RegisterKill() : le bonus de chaîne appelle RegisterKill() sans
+    // qu'un ennemi supplémentaire soit mort, donc il ne doit pas incrémenter Kills
+    public void RegisterEnemyKilled()
+    {
+        if (IsGameOver) return;
+        Kills++;
     }
 
     public void TakeDamage()
@@ -41,8 +61,6 @@ public class GameManager : MonoBehaviour
         if (IsGameOver) return;
 
         dwarfHP--;
-        Debug.Log($"HP du nain : {dwarfHP}");
-
         FlashPlayerRed();
 
         if (dwarfHP <= 0)
@@ -63,7 +81,7 @@ public class GameManager : MonoBehaviour
     {
         if (IsGameOver) return;
         currentWave++;
-        Debug.Log($"--- Vague {currentWave} ---");
+        if (!IsTraining) Debug.Log($"--- Vague {currentWave} ---");
     }
 
     void GameOver()
@@ -79,7 +97,10 @@ public class GameManager : MonoBehaviour
             // pour permettre les resets d'épisodes ML-Agents
             player.GetComponent<PlayerMovement>()?.SetEntityActive(false);
         }
-        Debug.Log($"Game Over — Score final : {score}");
+
+        MainMenuController.Instance?.OpenMenu();
+
+        if (!IsTraining) Debug.Log($"Game Over — Score final : {score}");
     }
 
     // Reset complet de la partie — appelé par DwarfAgent.OnEpisodeBegin()
@@ -88,6 +109,7 @@ public class GameManager : MonoBehaviour
         IsGameOver = false;
         dwarfHP = dwarfMaxHP;
         score = 0;
+        Kills = 0;
         currentWave = 0;
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -101,7 +123,7 @@ public class GameManager : MonoBehaviour
         // Redémarrage des vagues — voir note sur SpawnManager ci-dessous
         SpawnManager.Instance.StartTrainingEpisode();
 
-        Debug.Log("--- Nouvel épisode ---");
+        if (!IsTraining) Debug.Log("--- Nouvel épisode ---");
     }
 
     private void FlashPlayerRed()

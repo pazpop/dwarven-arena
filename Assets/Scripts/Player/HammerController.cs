@@ -1,3 +1,5 @@
+// Marteau du Nain : swing avec cooldown, zone de frappe, dégâts/knockback aux
+// ennemis touchés, et pénalité de vitesse en cas de swing raté.
 using UnityEngine;
 
 public class HammerController : MonoBehaviour
@@ -8,6 +10,7 @@ public class HammerController : MonoBehaviour
     public float knockbackForce = 15f;
     public float swingCooldown = 1.5f;
     public float missPenaltyDuration = 2f;
+    public int chainBonusPerExtraKill = 5; // Bonus par kill au-delà du 1er dans le même swing
 
     public bool IsOnCooldown => Time.time - lastSwingTime < swingCooldown;
 
@@ -85,12 +88,14 @@ public class HammerController : MonoBehaviour
         Collider2D[] hits = Physics2D.OverlapCircleAll(hitCenter, hitRadius);
 
         int enemiesHit = 0;
+        int kills = 0;
         foreach (var hit in hits)
         {
             EnemyAI enemy = hit.GetComponent<EnemyAI>();
             if (enemy != null)
             {
-                enemy.TakeHit(damage, swingDir.normalized * knockbackForce);
+                enemy.NotifyKnockback(EnemyAI.KnockbackSource.Hammer);
+                if (enemy.TakeHit(damage, swingDir.normalized * knockbackForce)) kills++;
                 enemiesHit++;
             }
         }
@@ -98,11 +103,13 @@ public class HammerController : MonoBehaviour
         if (enemiesHit == 0)
         {
             player.ApplyMissPenalty(missPenaltyDuration);
-            Debug.Log("Swing raté ! Pénalité de vitesse appliquée.");
         }
-        else
+        else if (kills >= 2)
         {
-            Debug.Log($"Swing réussi : {enemiesHit} ennemi(s) touché(s)");
+            // Multiplicateur de chaîne : plusieurs kills en un seul swing rapportent
+            // plus que les mêmes kills pris séparément (chaque EnemyAI.Die() a déjà
+            // compté son propre scoreValue, ceci n'ajoute que le bonus de chaîne)
+            GameManager.Instance.RegisterKill(chainBonusPerExtraKill * (kills - 1));
         }
     }
 

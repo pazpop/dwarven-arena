@@ -1,3 +1,5 @@
+// Piège à pics : empale les ennemis instantanément, inflige des dégâts répétés
+// au Nain et l'éjecte s'il campe dedans.
 using UnityEngine;
 
 public class SpikeTrap : MonoBehaviour
@@ -6,6 +8,18 @@ public class SpikeTrap : MonoBehaviour
     public float damageInterval = 0.5f;   // Dégâts répétés si le nain reste/campe dans les pics
 
     private float lastDamageTime = -10f;
+    private Collider2D col;
+
+    private void Awake()
+    {
+        col = GetComponent<Collider2D>();
+        HazardRegistry.Register(col);
+    }
+
+    private void OnDestroy()
+    {
+        HazardRegistry.Unregister(col);
+    }
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -13,7 +27,7 @@ public class SpikeTrap : MonoBehaviour
         EnemyAI enemy = other.GetComponent<EnemyAI>();
         if (enemy != null)
         {
-            enemy.Die();
+            enemy.DieFromSpike();
             return;
         }
 
@@ -29,7 +43,7 @@ public class SpikeTrap : MonoBehaviour
             if (pm != null && rb != null)
             {
                 Vector2 away = ((Vector2)other.transform.position - (Vector2)transform.position).normalized;
-                pm.ApplyStun(0.3f, away * 7f);
+                pm.ApplyStun(0.3f, away * 3.5f);
             }
         }
     }

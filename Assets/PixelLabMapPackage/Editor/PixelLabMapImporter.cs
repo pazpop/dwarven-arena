@@ -212,7 +212,7 @@ namespace PixelLab.MapExport.Editor
                 : Selection.activeGameObject.GetComponent<PixelLabTileRenderer>();
             var renderer = selected != null
                 ? selected
-                : UnityEngine.Object.FindFirstObjectByType<PixelLabTileRenderer>();
+                : UnityEngine.Object.FindAnyObjectByType<PixelLabTileRenderer>();
             if (renderer == null)
             {
                 PixelLabMapPainterWindow.OpenWindow();
@@ -564,7 +564,14 @@ namespace PixelLab.MapExport.Editor
 
         private static Type FindEditorType(string fullName)
         {
+            // Cherche un type interne d'Éditeur (ex: UnityEditor.Tilemaps.GridPaintingState)
+            // par nom complet à travers toutes les assemblies chargées — il n'y a pas
+            // d'équivalent TypeCache pour une recherche par nom exact (TypeCache cible les
+            // types dérivés/attributs, pas un lookup par nom), donc AppDomain reste
+            // nécessaire ici malgré l'avertissement UAC0005.
+#pragma warning disable UAC0005
             return AppDomain.CurrentDomain.GetAssemblies()
+#pragma warning restore UAC0005
                 .Select(assembly => assembly.GetType(fullName, false))
                 .FirstOrDefault(type => type != null);
         }

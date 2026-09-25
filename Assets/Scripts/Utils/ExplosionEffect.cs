@@ -1,58 +1,95 @@
-using System.Collections.Generic;
+// Effet visuel d'explosion (mort d'un ennemi ou du Nain) : fragments colorés qui
+// giclent, tournent et rétrécissent. Un fragment de particule (pas un root +
+// enfants) : chaque instance est un GameObject réutilisable piochée dans un
+// ObjectPool plutôt que Instantiate/Destroy à chaque mort — évite le churn GC
+// d'une trentaine d'objets par kill.
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class ExplosionEffect : MonoBehaviour
 {
     private static Sprite squareSprite;
+    private static ObjectPool<ExplosionEffect> pool;
 
-    private class Fragment
+    // Ce projet a Domain Reload + Scene Reload désactivés (voir EditorSettings) : un
+    // fragment encore actif (explosion en cours) au moment d'un Stop précédent reste
+    // dans la scène, orphelin et visible, puisqu'elle n'est jamais rechargée. On
+    // nettoie tout fragment existant et on repart sur un pool neuf à chaque Play.
+    // AfterSceneLoad (pas SubsystemRegistration, trop tôt pour un FindObjectsByType
+    // fiable — la scène n'est pas garantie prête à ce stade selon la doc Unity)
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    private static void ResetOnPlay()
     {
-        public Transform tr;
-        public SpriteRenderer sr;
-        public Vector2 velocity;
-        public float spin;
-        public float life;
-        public float maxLife;
-    }
-
-    private readonly List<Fragment> fragments = new List<Fragment>();
-
-    // Point d'entrée : ExplosionEffect.Spawn(position, couleur)
-    public static void Spawn(Vector3 position, Color color, int fragmentCount = 14, float speed = 5f)
-    {
-        GameObject root = new GameObject("Explosion");
-        root.transform.position = position;
-        var fx = root.AddComponent<ExplosionEffect>();
-        fx.Run(position, color, fragmentCount, speed);
-    }
-
-    private void Run(Vector3 position, Color color, int count, float speed)
-    {
-        for (int i = 0; i < count; i++)
+        foreach (var leftover in FindObjectsByType<ExplosionEffect>(FindObjectsInactive.Include))
         {
-            var frag = new GameObject("frag");
-            frag.transform.SetParent(transform, false);
-            frag.transform.localPosition = Vector3.zero;
-
-            var sr = frag.AddComponent<SpriteRenderer>();
-            sr.sprite = GetSquareSprite();
-            sr.color = color;
-            frag.transform.localScale = Vector3.one * Random.Range(0.15f, 0.35f);
-
-            // Direction aléatoire en cercle (explosion radiale)
-            float angle = Random.Range(0f, Mathf.PI * 2f);
-            var dir = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
-
-            fragments.Add(new Fragment
-            {
-                tr = frag.transform,
-                sr = sr,
-                velocity = dir * Random.Range(speed * 0.5f, speed),
-                spin = Random.Range(-540f, 540f),
-                life = 0f,
-                maxLife = Random.Range(0.4f, 0.7f)
-            });
+            Destroy(leftover.gameObject);
         }
+        pool = null;
+    }
+
+    private SpriteRenderer sr;
+    private Vector2 velocity;
+    private float spin;
+    private float life;
+    private float maxLife;
+    private float maxScale;
+
+    // Point d'entrée : ExplosionEffect.Spawn(position, couleur) — minScale/maxScale
+    // permettent une seconde salve de fines particules en plus des gros morceaux
+    // (voir EnemyAI.Die()), sans toucher au réglage par défaut
+    public static void Spawn(Vector3 position, Color color, int fragmentCount = 22, float speed = 5f,
+        float minScale = 0.05f, float maxScale = 0.22f)
+    {
+        if (pool == null)
+        {
+            pool = new ObjectPool<ExplosionEffect>(
+                createFunc: CreateFragment,
+                actionOnGet: f => f.gameObject.SetActive(true),
+                actionOnRelease: f => f.gameObject.SetActive(false),
+                // Le PoolManager interne de Unity vide tous les pools enregistrés à la
+                // sortie du Play — à ce moment-là, Unity a déjà détruit les fragments
+                // (objets créés en Play) avant que ce callback s'exécute, donc "f" peut
+                // être un "fake null" (wrapper C# encore là, objet natif déjà détruit)
+                actionOnDestroy: f => { if (f != null) Destroy(f.gameObject); },
+                defaultCapacity: 32, maxSize: 256);
+        }
+
+        for (int i = 0; i < fragmentCount; i++)
+        {
+            pool.Get().Init(position, color, speed, minScale, maxScale);
+        }
+    }
+
+    private static ExplosionEffect CreateFragment()
+    {
+        var go = new GameObject("ExplosionFragment");
+        var frag = go.AddComponent<ExplosionEffect>();
+        frag.sr = go.AddComponent<SpriteRenderer>();
+        frag.sr.sprite = GetSquareSprite();
+        frag.sr.sortingOrder = 30010; // Au-dessus des décors (jusqu'à 30003) : jamais caché par le décor
+        return frag;
+    }
+
+    private void Init(Vector3 position, Color color, float speed, float minScale, float maxScaleParam)
+    {
+        transform.position = position;
+        transform.rotation = Quaternion.identity;
+        maxScale = Random.Range(minScale, maxScaleParam);
+        // Taille correcte tout de suite (pas Vector3.one) : pour un fragment réutilisé
+        // du pool, Unity ne garantit pas que Update() tourne dès la même frame que sa
+        // réactivation (contrairement à un fragment fraîchement créé) — sans ça, il
+        // pouvait rester visible à taille pleine un moment avant de se corriger
+        transform.localScale = Vector3.one * maxScale;
+        sr.color = color;
+
+        // Direction aléatoire en cercle (explosion radiale)
+        float angle = Random.Range(0f, Mathf.PI * 2f);
+        var dir = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+
+        velocity = dir * Random.Range(speed * 0.5f, speed);
+        spin = Random.Range(-400f, 400f);
+        life = 0f;
+        maxLife = Random.Range(0.35f, 0.6f);
     }
 
     // Génère un petit carré blanc par code — aucun asset nécessaire
@@ -72,30 +109,20 @@ public class ExplosionEffect : MonoBehaviour
 
     private void Update()
     {
-        bool anyAlive = false;
+        life += Time.deltaTime;
+        float t = life / maxLife;
 
-        foreach (var frag in fragments)
-        {
-            if (frag == null || frag.tr == null) continue;
-            anyAlive = true;
+        // Déplacement + décélération
+        transform.position += (Vector3)(velocity * Time.deltaTime);
+        velocity *= 1f - 5f * Time.deltaTime; // Freinage marqué : rayon d'explosion contenu, plus "lourd"
+        transform.Rotate(0f, 0f, spin * Time.deltaTime);
 
-            frag.life += Time.deltaTime;
-            float t = frag.life / frag.maxLife;
+        // Rétrécissement + fondu
+        transform.localScale = Vector3.one * Mathf.Lerp(maxScale, 0f, t);
+        Color c = sr.color;
+        c.a = 1f - t;
+        sr.color = c;
 
-            // Déplacement + décélération
-            frag.tr.position += (Vector3)(frag.velocity * Time.deltaTime);
-            frag.velocity *= 1f - 3f * Time.deltaTime;
-            frag.tr.Rotate(0f, 0f, frag.spin * Time.deltaTime);
-
-            // Rétrécissement + fondu
-            frag.tr.localScale = Vector3.one * Mathf.Lerp(0.3f, 0f, t);
-            Color c = frag.sr.color;
-            c.a = 1f - t;
-            frag.sr.color = c;
-
-            if (frag.life >= frag.maxLife) Destroy(frag.tr.gameObject);
-        }
-
-        if (!anyAlive) Destroy(gameObject);
+        if (life >= maxLife) pool.Release(this);
     }
 }

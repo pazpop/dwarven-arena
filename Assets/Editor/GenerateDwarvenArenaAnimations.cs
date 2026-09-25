@@ -93,6 +93,55 @@ public static class GenerateDwarvenArenaAnimations
         Debug.Log("Goblin.controller généré (Assets/Animations/Goblin/).");
     }
 
+    [MenuItem("Tools/Dwarven Arena/Générer les animations de l'Orc")]
+    public static void GenerateOrc()
+    {
+        const string spriteRoot = "Assets/Sprites/Orc";
+        const string animRoot = "Assets/Animations/Orc";
+        ResetFolder(animRoot);
+        FixSpriteImportSettings(spriteRoot);
+
+        var idle = BuildBlendTreeFromSingleSprites("Orc_Idle", $"{spriteRoot}/Idle", animRoot);
+        var move = BuildBlendTree("Orc_Move", spriteRoot, animRoot, "Move", fps: 6, loop: true);
+
+        var controller = CreateController($"{animRoot}/Orc.controller");
+        AddParam(controller, "MoveX", AnimatorControllerParameterType.Float);
+        AddParam(controller, "MoveY", AnimatorControllerParameterType.Float);
+        AddParam(controller, "IsMoving", AnimatorControllerParameterType.Bool);
+
+        var sm = controller.layers[0].stateMachine;
+        var idleState = sm.AddState("Idle"); idleState.motion = idle;
+        var moveState = sm.AddState("Move"); moveState.motion = move;
+        sm.defaultState = idleState;
+
+        AddTransition(idleState, moveState, ("IsMoving", true));
+        AddTransition(moveState, idleState, ("IsMoving", false));
+
+        Save(controller);
+        Debug.Log("Orc.controller généré (Assets/Animations/Orc/).");
+    }
+
+    // Prop non-directionnel (une seule boucle de frames, pas de BlendTree)
+    [MenuItem("Tools/Dwarven Arena/Générer l'animation de la Flamme")]
+    public static void GenerateFlame()
+    {
+        const string spriteRoot = "Assets/Sprites/Environment/Flame";
+        const string animRoot = "Assets/Animations/Flame";
+        ResetFolder(animRoot);
+        FixSpriteImportSettings(spriteRoot, pixelsPerUnit: 48);
+
+        var clip = BuildClipFromFrames("Flame_Flicker", spriteRoot, animRoot, fps: 10, loop: true);
+
+        var controller = CreateController($"{animRoot}/Flame.controller");
+        var sm = controller.layers[0].stateMachine;
+        var idleState = sm.AddState("Flicker");
+        idleState.motion = clip;
+        sm.defaultState = idleState;
+
+        Save(controller);
+        Debug.Log("Flame.controller généré (Assets/Animations/Flame/).");
+    }
+
     // ==================== Construction des Blend Trees ====================
 
     private static BlendTree BuildBlendTree(string name, string spriteRoot, string animRoot, string animType, int fps, bool loop)
@@ -180,12 +229,12 @@ public static class GenerateDwarvenArenaAnimations
     // source, sans jamais avoir à toucher au Scale (qui redécale le hitbox).
     private const int CharacterPixelsPerUnit = 64;
 
-    [MenuItem("Tools/Dwarven Arena/Corriger le PPU du Spike (Environment)")]
-    public static void FixSpikePixelsPerUnit()
+    [MenuItem("Tools/Dwarven Arena/Corriger le PPU des sprites Environment")]
+    public static void FixEnvironmentPixelsPerUnit()
     {
         FixSpriteImportSettings("Assets/Sprites/Environment", pixelsPerUnit: 48);
         AssetDatabase.SaveAssets();
-        Debug.Log("PPU du Spike réglé à 48 (taille native, 1 unité à Scale=1).");
+        Debug.Log("PPU des sprites Environment réglé à 48 (taille native, 1 unité à Scale=1).");
     }
 
     private static void FixSpriteImportSettings(string root, int pixelsPerUnit = CharacterPixelsPerUnit)

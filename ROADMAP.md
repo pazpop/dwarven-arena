@@ -1,0 +1,55 @@
+# 🗺️ Roadmap
+
+- [x] Stage 0 — Projet Unity, joueur déplaçable (WASD), physique 2D
+- [X] Stage 1 — Ennemis (gobelins) avec IA de poursuite
+- [X] Stage 2 — Système de vagues + spawn + 3 HP
+- [X] Stage 3 — Marteau : zone de frappe, knockback, effet domino
+- [X] Stage 4 — Ravins + zones de mort
+- [X] Stage 5 — Bouclier + pénalité de vitesse sur swing raté
+- [X] Stage 6 — Pics + explosions colorées (VFX)
+- [X] Stage 7 — Intégration ML-Agents (observations/actions/rewards) — voir [POC_IA_ML-AGENTS.md](POC_IA_ML-AGENTS.md) pour le détail des tests et résultats
+- [ ] Stage 8 — Remplacement des assets graphiques
+  - [x] Sprites du Nain, du Gobelin et de l'Orc, tileset de sol et carte de l'arène — générés via [PixelLab](https://pixellab.ai)
+  - [x] Animations du Nain (idle/marche/attaque/protection), du Gobelin et de l'Orc (idle/marche) — générées via PixelLab
+  - [ ] Animation de mort, effets de particules (blood splatter)
+  - [ ] Variabilisation automatique de la carte : décorations placées aléatoirement, sans jamais gêner la lisibilité du jeu (pas d'obstruction de la vue, pas sur les zones de spawn/danger)
+  - [ ] Lisibilité du Nain : bouclier plus gros (état bouclier levé/baissé plus clair) et tête de marteau plus grosse — regénérer Nain/Gobelin/Orc ensemble si besoin pour limiter la dérive de direction artistique ; à retoucher après coup (zone de frappe, collider) si les proportions changent
+  - [ ] Traînée visuelle sur le coup de marteau (sprites qui s'estompent le long de l'arc du swing, même principe que `ExplosionEffect`) pour mieux lire la direction/l'impact du coup
+  - Ne touche ni la logique ni le modèle : l'IA se base sur les observations, pas les visuels
+- [ ] Stage 8.5 — Mécaniques décrites dans [GAMEPLAY.md](./GAMEPLAY.md) mais pas encore codées
+  - [x] Orques — sprite/anim + prefab (`EnemyAI` générique) intégrés, `SpawnManager` mélange Gobelin/Orc (`orcChance`)
+  - [x] Multiplicateur de score en chaîne (`HammerController.chainBonusPerExtraKill`, +5 pts par kill au-delà du 1er dans le même swing)
+  - [x] Bonus de score pour l'Orc (`EnemyAI.scoreValue`, 20 pts vs 10 pour le Gobelin)
+  - [x] Bonus de score selon la méthode de kill (marteau direct / poussé au marteau / poussé au bouclier, ravin ou pic) — voir [GAMEPLAY.md](./GAMEPLAY.md#score-et-progression)
+- [ ] Stage 9 — Raffinement des hyperparamètres (et rewards)
+  - Reward shaping anti-camping : malus de proximité aux pics, ou bonus de proximité aux ennemis
+  - Curiosity (`reward_signals.curiosity`) si l'agent reste bloqué sur sa stratégie de camping
+  - Ajuster `learning_rate`/`batch_size` selon les courbes du run suivant
+  - Tester `lambd`/`beta` si l'exploration est insuffisante
+  - Objectif : un nain qui chasse activement les gobelins au lieu de camper
+- [ ] Stage 10 — Cinématique d'intro (pont qui s'écroule)
+- [ ] Stage 11 — Rework de l'UI
+  - [ ] Menu principal : Start / version du jeu / Aide / Leaderboard / Options / Crédits / Quit
+  - [ ] Menu pause dédié, distinct de l'écran titre : Reprendre / Aide / Options / Restart / Menu principal
+    (voir [GAMEPLAY.md](./GAMEPLAY.md#menu) pour l'état actuel — un seul panneau réutilisé)
+  - [ ] HUD en jeu : score, HP, timer de la run affichés à l'écran
+  - [ ] Menu Options/Réglages, accessible depuis le menu principal ET le menu pause :
+    - [ ] **Remapping clavier — indispensable**, pas juste un nice-to-have : les positions physiques WASD/Espace n'ont pas le même feeling en AZERTY qu'en QWERTY (ZQSD vs WASD)
+    - [ ] Volume — nécessaire dès que la partie sonore existe (Stage 13)
+- [ ] Stage 12 — Leaderboard
+  - [ ] Leaderboard local (pseudo, score, kills, temps de la run)
+  - [ ] Option leaderboard "monde" : petit serveur (Docker sur VPS perso) qui centralise les scores des joueurs
+  - [ ] Le jeu doit rester pleinement jouable si le serveur ne répond pas — repli silencieux sur le leaderboard local, jamais de blocage/attente
+- [ ] Stage 13 — Son
+  - [ ] Musique d'ambiance
+  - [ ] SFX : coup de marteau, blocage au bouclier, mort (nain/ennemi), UI
+- [ ] Stage 14 — Rendre le jeu plus "juicy"
+  - [ ] Screen shake sur les gros impacts de marteau
+  - [ ] Hit-stop (freeze-frame) sur un gros coup de marteau
+  - [ ] Flash du sprite au moment du hit
+- [ ] Stage 15 — Polish final, GIF de démo, release
+  - [ ] Build multiplateforme (Windows / Linux / macOS) — vérifier la compatibilité (Sentis pour l'inférence ML-Agents inclus) sur les trois cibles
+- [ ] Stage 16 — Publication Steam
+  - [ ] Publier le jeu sur Steam
+  - [ ] Leaderboard Steam (en plus/à la place du leaderboard local/serveur perso du Stage 12)
+  - [ ] Succès Steam

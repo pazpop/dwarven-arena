@@ -32,6 +32,9 @@
 - **Blocage frontal** : réduit/annule les dégâts venant de la moitié avant
 - **Micro-poussée** : permet de repousser légèrement les ennemis —
   ajuster le positionnement, pas tuer
+- **Orientation automatique** : pendant le blocage, le nain se tourne vers
+  l'ennemi le plus proche (verrouillé 2 s à la fois, pour éviter un
+  clignotement entre deux cibles équidistantes) — pas besoin de viser soi-même
 - Lève le bouclier **pendant le cooldown du marteau** : c'est la parade
   défensive du cycle de combat
 - Légère lenteur quand le bouclier est levé
@@ -50,7 +53,7 @@
 | Propriété | Gobelin 🟢 | Orque 🟠 |
 |----------|-----------|----------|
 | Nombre | Très nombreux | Rares |
-| Masse | Légère (0.5) | Lourde (3) |
+| Masse | Légère (0.5) | Deux fois plus lourde (1) |
 | Vitesse | Moyenne | Lente |
 | Facilité à pousser | Très facile | Difficile |
 | Rôle design | Pop-corn, dominos à chaînes | Mur vivant, absorbe les coups |
@@ -84,24 +87,73 @@ combat.
 
 - **Ennemis** : explosent en **vert** 💥 (cascade visible sur les chaînes)
 - **Nain** : explose en **rouge** 💥
-- Petit délai comique (0,5 s de panique) pour l'orque qui bascule
-  dans le ravin avant d'exploser
-- Screen shake léger sur les gros impacts de marteau
+- Tout ennemi (gobelin ou orque) qui tombe dans un ravin rétrécit et tourne
+  sur lui-même pendant 0,4 s avant d'exploser — laisse le temps de voir la chute
+- Screen shake léger sur les gros impacts de marteau *(pas encore codé — voir
+  [ROADMAP.md](ROADMAP.md))*
 
 ## Score et progression
 
-- Kill gobelin : 10 pts, kill orque : 20 pts
+- Kill gobelin : 10 pts, kill orque : 20 pts (base)
+- **Bonus « façon de tuer »** : pousser un ennemi sur un piège rapporte plus
+  que le tuer directement au marteau — et le faire au bouclier (portée et
+  force bien plus faibles que le marteau, donc plus risqué à réussir) rapporte
+  encore plus que le faire au marteau :
+
+  | Méthode | Multiplicateur |
+  |---|---|
+  | Marteau (tue directement) | ×1 |
+  | Poussé au marteau → ravin | ×1.5 |
+  | Poussé au marteau → pic | ×2 |
+  | Poussé au bouclier → ravin | ×2.5 |
+  | Poussé au bouclier → pic | ×3 |
+
 - **Multiplicateur de chaîne** : pousser N ennemis en un seul
   swing/chaîne rapporte plus que N kills séparés → récompense le
   style de jeu agressif et réfléchi, décourage le camping
 - Vagues croissantes : introduction progressive des orques au fil
   des vagues (courbe d'apprentissage)
 
+## Menu
+
+État actuel (`MainMenuController.cs`) — un seul écran (`MenuPanel`) réutilisé
+pour trois usages :
+
+- **Lancement** : le menu s'affiche, le jeu est en pause (`Time.timeScale = 0`)
+- **Échap** : bascule pause/reprise en cours de partie, sans rien réinitialiser
+- **Mort du joueur** : `GameManager.GameOver()` rouvre le menu automatiquement
+- **Bouton Start** : cache le menu, relance le temps, et appelle
+  `GameManager.ResetGame()` (score/HP/vagues à zéro) — que ce soit le tout
+  premier lancement ou une relance après une mort
+
+Pas de menu pendant l'entraînement ML-Agents (`Academy.IsCommunicatorOn`) :
+le Canvas est désactivé entièrement pour ne jamais geler la simulation.
+
+Limite connue : c'est l'écran titre qui sert aussi d'écran pause — pas de
+panneau pause dédié (voir Stage 11 du Roadmap).
+
 ## Mesures anti-camping
 
-- Les gobelins contournent et attaquent en flanc
+- Les gobelins/orques poursuivent le nain en ligne directe (avec évitement des
+  dangers) — pas de flanking coordonné pour l'instant, voir Idées de features
 - Le multiplicateur de chaîne valorise les grandes frappes
 - Aucun soin passif : survivre passivement ne rapporte rien
+
+## Idées de features (pas encore décidées ni codées)
+
+Pistes réalistes à l'échelle du projet, issues d'une comparaison avec des
+petits jeux similaires en 2025 :
+
+- Flanking coordonné des gobelins/orques (contourner plutôt que foncer en ligne droite)
+- Dash/roulade d'esquive pour le nain
+- Pickups/buffs temporaires en cours de partie (vitesse, arme secondaire...)
+- Vagues "élite" occasionnelles (un orc renforcé toutes les N vagues)
+- Indicateur hors-écran de la direction du danger
+- Seed de run reproductible — utile aussi pour comparer un run humain et un
+  run de l'agent entraîné sur exactement la même partie
+
+*Le "juice" (screen shake, hit-stop, flash au hit), le HUD (score/HP/timer) et
+le leaderboard sont passés en planification concrète — voir [ROADMAP.md](ROADMAP.md).*
 
 ## Principes de design
 
