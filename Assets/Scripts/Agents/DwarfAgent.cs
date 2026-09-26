@@ -1,5 +1,6 @@
 // Agent ML-Agents (PPO) qui contrôle le Nain à la place du clavier : observations,
 // actions et rewards de l'entraînement — voir POC_IA_ML-AGENTS.md pour le détail.
+using System.Collections.Generic;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
@@ -15,15 +16,26 @@ public class DwarfAgent : Agent
 
     [Header("Observations")]
     public int observedEnemies = 3;
+    // Nombre de pics observés (2 valeurs chacun, dans l'ordre du tableau spikeTraps) ;
+    // slots au-delà de spikeTraps.Length = zéros.
+    // Taille d'observation totale = 11 + 2 × observedSpikes + 6 × observedEnemies, à
+    // reporter dans Behavior Parameters (Space Size) : 39 avec 5 pics et 3 ennemis
+    // (dwarf_v03). Avant : 25 (dwarf_v01/v02, 2 pics non assignés, sans ravins).
+    public int observedSpikes = 2;
 
     [Header("Récompenses")]
+    // Kill en poussant un ennemi dans un danger : killReward × multiplicateur du score
+    // (×1.5 ravin au marteau … ×3 pic au bouclier). Kill direct (marteau) : bien moins,
+    // pour que le décor soit le chemin le plus rentable — c'est le cœur du gameplay.
     public float killReward = 1f;
+    public float directKillReward = 0.3f;
     public float damagePenalty = -0.3f;
     public float deathPenalty = -1f;
     public float stepCost = -0.0005f;
 
     // Suivi des deltas pour les rewards par polling
-    private int lastKnownKills;
+    private int lastKnownDirectKills;
+    private float lastKnownPushedSum;
     private int lastKnownHP;
 
     private bool pendingSwing = false;
@@ -58,8 +70,9 @@ public class DwarfAgent : Agent
 
         player.ExternalControl = false;
 
-        // Durée max d'un épisode : 3000 décisions × 5 frames ≈ 4 minutes de jeu.
-        // Au-delà, l'épisode se termine (sans pénalité de mort) — évite les parties infinies.
+        // Durée max d'un épisode : 3000 steps, soit ~600 décisions (1 décision tous les
+        // 5 steps, Decision Requester). Au-delà, l'épisode se termine (sans pénalité de
+        // mort) — évite les parties infinies.
         MaxStep = 3000;
 
         nearestEnemies = new EnemyAI[observedEnemies];
@@ -77,7 +90,8 @@ public class DwarfAgent : Agent
     public override void OnEpisodeBegin()
     {
         GameManager.Instance.ResetGame();
-        lastKnownKills = 0;
+        lastKnownDirectKills = 0;
+        lastKnownPushedSum = 0f;
         lastKnownHP = GameManager.Instance.CurrentDwarfHP;
     }
 
@@ -90,13 +104,19 @@ public class DwarfAgent : Agent
         // --- Récompenses par détection de deltas (polling, zéro couplage avec le gameplay) ---
         var gm = GameManager.Instance;
 
-        if (gm.Kills > lastKnownKills)
+        // Reward par façon de tuer (voir GameManager.RegisterEnemyKilled). Pas le score
+        // en points : il varie selon le type d'ennemi et le bonus de chaîne. Suicides
+        // d'ennemis contre le nain = pas de kill.
+        if (gm.DirectKills > lastKnownDirectKills)
         {
-            // +1 reward par kill (Kills, pas Score : le score en points varie selon le
-            // type d'ennemi/le bonus de chaîne, le reward RL doit rester constant par
-            // kill — voir GameManager.RegisterEnemyKilled(). Suicides = pas de kill.
-            AddReward(killReward * (gm.Kills - lastKnownKills));
-            lastKnownKills = gm.Kills;
+            AddReward(directKillReward * (gm.DirectKills - lastKnownDirectKills));
+            lastKnownDirectKills = gm.DirectKills;
+        }
+
+        if (gm.PushedKillMultiplierSum > lastKnownPushedSum)
+        {
+            AddReward(killReward * (gm.PushedKillMultiplierSum - lastKnownPushedSum));
+            lastKnownPushedSum = gm.PushedKillMultiplierSum;
         }
 
         if (gm.CurrentDwarfHP < lastKnownHP)
@@ -137,7 +157,7 @@ public class DwarfAgent : Agent
         var gm = GameManager.Instance;
 
         // GARDE-FOU : à la frame de destruction (mort), player/hammer/gm peuvent être
-        // nuls. On injecte des valeurs neutres pour garantir TOUJOURS 25 observations.
+        // nuls. On injecte des valeurs neutres pour garantir TOUJOURS le même nombre d'observations.
         bool refsValid = player != null && hammer != null && gm != null;
 
         if (!refsValid && !loggedFallbackOnce)
@@ -168,23 +188,22 @@ public class DwarfAgent : Agent
             for (int k = 0; k < 5; k++) sensor.AddObservation(0f); // reste (5 obs)
         }
 
-        // --- Pics (4) ---
-        if (spikeTraps != null)
+        // --- Pics (2 × observedSpikes) ---
+        for (int i = 0; i < observedSpikes; i++)
         {
-            for (int i = 0; i < 2; i++)
+            if (spikeTraps != null && i < spikeTraps.Length && spikeTraps[i] != null)
             {
-                if (i < spikeTraps.Length && spikeTraps[i] != null)
-                {
-                    Vector2 delta = (Vector2)spikeTraps[i].transform.position - pos;
-                    sensor.AddObservation(delta.x / 6f);
-                    sensor.AddObservation(delta.y / 4f);
-                }
-                else { sensor.AddObservation(0f); sensor.AddObservation(0f); }
+                Vector2 delta = (Vector2)spikeTraps[i].transform.position - pos;
+                sensor.AddObservation(delta.x / 6f);
+                sensor.AddObservation(delta.y / 4f);
             }
+            else { sensor.AddObservation(0f); sensor.AddObservation(0f); }
         }
-        else { for (int i = 0; i < 4; i++) sensor.AddObservation(0f); }
 
-        // --- Ennemis les plus proches (12) ---
+        // --- Ravin le plus proche du nain (2) ---
+        AddNearestHazardObservation(sensor, pos, HazardRegistry.Ravines);
+
+        // --- Ennemis les plus proches (6 chacun) ---
         // Sélection des `observedEnemies` plus proches par insertion dans un petit
         // buffer trié réutilisé (nearestEnemies/nearestDistSq) : évite le
         // FindObjectsByType + l'allocation de liste + le tri complet d'avant,
@@ -223,12 +242,39 @@ public class DwarfAgent : Agent
                 sensor.AddObservation(delta.y / 4f);
                 sensor.AddObservation(delta.magnitude / 6f);
                 sensor.AddObservation(erb != null ? erb.linearVelocity.magnitude / 5f : 0f);
+                // Danger (pic ou ravin) le plus proche DE CET ENNEMI : l'info qui permet
+                // de décider où le pousser
+                AddNearestHazardObservation(sensor, nearestEnemies[i].transform.position, HazardRegistry.Colliders);
             }
             else
             {
-                for (int j = 0; j < 4; j++) sensor.AddObservation(0f);
+                for (int j = 0; j < 6; j++) sensor.AddObservation(0f);
             }
         }
+    }
+
+    // Vecteur (2 valeurs) de `origin` vers le point le plus proche parmi `hazards` ;
+    // zéros s'il n'y en a aucun
+    private static void AddNearestHazardObservation(VectorSensor sensor, Vector2 origin, List<Collider2D> hazards)
+    {
+        float bestDistSq = float.MaxValue;
+        Vector2 bestDelta = Vector2.zero;
+
+        foreach (var hazard in hazards)
+        {
+            if (hazard == null) continue;
+
+            Vector2 delta = hazard.ClosestPoint(origin) - origin;
+            float distSq = delta.sqrMagnitude;
+            if (distSq < bestDistSq)
+            {
+                bestDistSq = distSq;
+                bestDelta = delta;
+            }
+        }
+
+        sensor.AddObservation(bestDelta.x / 6f);
+        sensor.AddObservation(bestDelta.y / 4f);
     }
 
     // ==================== HEURISTIC (inchangé) ====================

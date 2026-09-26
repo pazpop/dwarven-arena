@@ -9,7 +9,7 @@ public class DeathZone : MonoBehaviour
     private void Awake()
     {
         col = GetComponent<Collider2D>();
-        HazardRegistry.Register(col);
+        HazardRegistry.Register(col, isRavine: true);
     }
 
     private void OnDestroy()

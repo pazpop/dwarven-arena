@@ -219,7 +219,7 @@ public class EnemyAI : MonoBehaviour
     {
         SpawnExplosion(transform.position, new Color(0.2f, 0.9f, 0.2f)); // vert
         GameManager.Instance.RegisterKill(Mathf.RoundToInt(scoreValue * scoreMultiplier));
-        GameManager.Instance.RegisterEnemyKilled();
+        GameManager.Instance.RegisterEnemyKilled(scoreMultiplier);
         Destroy(gameObject);
     }
 

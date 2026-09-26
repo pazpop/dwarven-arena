@@ -30,6 +30,12 @@ public class GameManager : MonoBehaviour
     // il rapporte au score affiché au joueur
     public int Kills { get; private set; }
 
+    // Détail des kills pour le reward de l'agent, selon la façon de tuer (voir
+    // RegisterEnemyKilled) : kills directs (marteau, ou chute sans poussée) et somme
+    // des multiplicateurs des kills obtenus en poussant un ennemi dans un danger
+    public int DirectKills { get; private set; }
+    public float PushedKillMultiplierSum { get; private set; }
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -50,10 +56,13 @@ public class GameManager : MonoBehaviour
     // Appelé une seule fois par ennemi effectivement tué (voir EnemyAI.Die()) —
     // distinct de RegisterKill() : le bonus de chaîne appelle RegisterKill() sans
     // qu'un ennemi supplémentaire soit mort, donc il ne doit pas incrémenter Kills
-    public void RegisterEnemyKilled()
+    // `scoreMultiplier` : celui du score (×1 direct, ×1.5 à ×3 poussé dans un danger)
+    public void RegisterEnemyKilled(float scoreMultiplier = 1f)
     {
         if (IsGameOver) return;
         Kills++;
+        if (scoreMultiplier > 1f) PushedKillMultiplierSum += scoreMultiplier;
+        else DirectKills++;
     }
 
     public void TakeDamage()
@@ -110,6 +119,8 @@ public class GameManager : MonoBehaviour
         dwarfHP = dwarfMaxHP;
         score = 0;
         Kills = 0;
+        DirectKills = 0;
+        PushedKillMultiplierSum = 0f;
         currentWave = 0;
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -126,12 +137,19 @@ public class GameManager : MonoBehaviour
         if (!IsTraining) Debug.Log("--- Nouvel épisode ---");
     }
 
+    private Coroutine flashCoroutine;
+
     private void FlashPlayerRed()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
-            StartCoroutine(FlashRoutine(player.GetComponent<SpriteRenderer>()));
+            // Arrête un flash déjà en cours avant d'en relancer un — sinon deux flashs
+            // rapprochés (fréquent en entraînement accéléré) se chevauchent, et le
+            // second capturait la couleur "actuelle" (encore rouge) comme référence à
+            // restaurer, laissant le nain rouge en permanence après quelques morts
+            if (flashCoroutine != null) StopCoroutine(flashCoroutine);
+            flashCoroutine = StartCoroutine(FlashRoutine(player.GetComponent<SpriteRenderer>()));
         }
     }
 
@@ -139,7 +157,8 @@ public class GameManager : MonoBehaviour
     {
         if (renderer == null) yield break;
 
-        Color original = renderer.color;
+        // Couleur de base fixe (pas "renderer.color" au moment de l'appel) : rien
+        // d'autre ne teinte le sprite du nain, donc blanc est toujours la bonne cible
         renderer.color = new Color(1f, 0.3f, 0.3f);
 
         float elapsed = 0f;
@@ -152,7 +171,9 @@ public class GameManager : MonoBehaviour
 
         if (renderer != null)
         {
-            renderer.color = original;
+            renderer.color = Color.white;
         }
+
+        flashCoroutine = null;
     }
 }
