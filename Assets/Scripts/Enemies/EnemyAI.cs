@@ -66,6 +66,11 @@ public class EnemyAI : MonoBehaviour
         animator = GetComponent<Animator>();
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null) target = playerObj.transform;
+
+        // Les murs des pics ne bloquent que le Nain : un ennemi doit pouvoir y être poussé
+        Collider2D col = GetComponent<Collider2D>();
+        foreach (var wall in HazardRegistry.SpikeWalls)
+            Physics2D.IgnoreCollision(wall, col);
     }
 
     private void FixedUpdate()

@@ -11,6 +11,9 @@ public static class HazardRegistry
     // Sous-ensemble : les ravins seulement (DeathZone), pour les observations de l'agent
     public static readonly List<Collider2D> Ravines = new List<Collider2D>();
 
+    // Murs des pics (SpikeTrap), solides pour le Nain bouclier levé ; jamais pour les ennemis
+    public static readonly List<Collider2D> SpikeWalls = new List<Collider2D>();
+
     // Ce projet a Domain Reload + Scene Reload désactivés (voir EditorSettings) :
     // sans ce reset explicite au (re)lancement du Play, les DeathZone/SpikeTrap de
     // la scène se ré-enregistreraient sur une liste jamais vidée entre deux sessions
@@ -19,6 +22,7 @@ public static class HazardRegistry
     {
         Colliders.Clear();
         Ravines.Clear();
+        SpikeWalls.Clear();
     }
 
     public static void Register(Collider2D col, bool isRavine = false)

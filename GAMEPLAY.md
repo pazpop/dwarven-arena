@@ -40,6 +40,9 @@
 - Lève le bouclier **pendant le cooldown du marteau** : c'est la parade
   défensive du cycle de combat
 - Légère lenteur quand le bouclier est levé
+- **Sur les pics** : bouclier levé, le nain ne prend aucun dégât et bute sur
+  les pics comme sur un mur invisible (impossible de les traverser) ;
+  bouclier baissé, il est blessé et éjecté
 
 ### La boucle de combat (core loop)
 
