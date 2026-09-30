@@ -26,6 +26,7 @@ public class MainMenuController : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.IsGameOver) return; // écran de mort : Start ou Quit seulement
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (menuPanel.activeSelf) ResumeGame();
