@@ -196,6 +196,7 @@ public class EnemyAI : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (isDead) return; // déjà mort cette frame (pic, ravin) : plus de dégâts au nain
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerMovement pm = collision.gameObject.GetComponent<PlayerMovement>();
