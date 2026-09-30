@@ -135,10 +135,8 @@ public class GameManager : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
-            // Arrête un flash déjà en cours avant d'en relancer un — sinon deux flashs
-            // rapprochés (fréquent en entraînement accéléré) se chevauchent, et le
-            // second capturait la couleur "actuelle" (encore rouge) comme référence à
-            // restaurer, laissant le nain rouge en permanence après quelques morts
+            // Un seul flash à la fois : deux flashs rapprochés (fréquents en
+            // entraînement accéléré) se chevaucheraient
             if (flashCoroutine != null) StopCoroutine(flashCoroutine);
             flashCoroutine = StartCoroutine(FlashRoutine(player.GetComponent<SpriteRenderer>()));
         }

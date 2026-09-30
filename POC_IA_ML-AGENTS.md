@@ -25,7 +25,7 @@ complet du gameplay : [GAMEPLAY.md](GAMEPLAY.md).
 |---|---|
 | **Agent** | `Assets/Scripts/Agents/DwarfAgent.cs` — contrôle externe, bascule clavier ↔ IA via `PlayerMovement.ExternalControl` |
 | **Actions** | 4 branches discrètes : déplacement X/Y, marteau, bouclier |
-| **Décisions** | 1 décision toutes les 5 frames (~12 Hz) |
+| **Décisions** | 1 décision tous les 5 pas physiques (~10 Hz, physique à 50 Hz) |
 | **Observations** | 39 valeurs (depuis `dwarf_v03`) : nain (9), 5 pics (10), ravin le plus proche du nain (2), 3 ennemis les plus proches (4 chacun + le danger le plus proche **de cet ennemi**, 2 chacun) |
 | **Rewards** | Kill **direct** (marteau) **+0.3** · kill en **poussant dans un danger** **+1.0 × multiplicateur du score** (ravin marteau ×1.5, pic marteau ×2, ravin bouclier ×2.5, pic bouclier ×3) · dégât subi **−0.3** · mort **−1.0** · coût par step **−0.0005** |
 | **Anti reward-hacking** | Aucun point pour le suicide (ravins/pics), pics neutres pour les ennemis |

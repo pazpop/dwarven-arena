@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public bool IsShielding { get; private set; } = false;
     public bool IsSlowPenalty { get; private set; } = false;
 
-    // Lecture seule pour les observations du DwarfAgent (7b)
+    // Lecture seule pour les observations du DwarfAgent
     public float StunTimer => stunTimer;
 
     // Contrôle externe (agent ML) : quand actif, ExternalMoveDir remplace le clavier

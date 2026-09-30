@@ -67,7 +67,7 @@ et se jouent dans Unity via Sentis, sans Python. Ceux de `dwarf_v01`/`v02`
 ### Prérequis
 
 - Unity 6 (via [Unity Hub](https://unity.com/download))
-- Python 3.10+
+- Python 3.10 (version exigée par ML-Agents)
 
 ### Jouer
 
@@ -77,18 +77,11 @@ et se jouent dans Unity via Sentis, sans Python. Ceux de `dwarf_v01`/`v02`
 
 ### Entraîner l'agent
 
-Ouvrir un terminal Git Bash à la racine du projet :
+Réglages Unity, lancement et suivi : [POC_IA_ML-AGENTS.md](POC_IA_ML-AGENTS.md#1-entraîner).
+En bref, depuis le venv ML-Agents :
 
 ```bash
-python -m venv venv
-source venv/Scripts/activate
-pip install mlagents
-mlagents-learn docs/runs/dwarf_v03_config.yaml --run-id=dwarf_v03
-```
-
-Suivi de l'entraînement :
-
-```bash
+mlagents-learn <chemin du projet>/docs/runs/dwarf_v03_config.yaml --run-id=dwarf_v03
 tensorboard --logdir results
 ```
 

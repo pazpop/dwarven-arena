@@ -19,8 +19,7 @@ public class DwarfAgent : Agent
     // Nombre de pics observés (2 valeurs chacun, dans l'ordre du tableau spikeTraps) ;
     // slots au-delà de spikeTraps.Length = zéros.
     // Taille d'observation totale = 11 + 2 × observedSpikes + 6 × observedEnemies, à
-    // reporter dans Behavior Parameters (Space Size) : 39 avec 5 pics et 3 ennemis
-    // (dwarf_v03). Avant : 25 (dwarf_v01/v02, 2 pics non assignés, sans ravins).
+    // reporter dans Behavior Parameters (Space Size) : 39 avec 5 pics et 3 ennemis.
     public int observedSpikes = 2;
 
     [Header("Récompenses")]
@@ -41,9 +40,8 @@ public class DwarfAgent : Agent
     private bool pendingSwing = false;
     private bool pendingShieldState = false;
 
-    // Buffers réutilisés par CollectObservations pour la sélection des ennemis les
-    // plus proches — évite un FindObjectsByType + allocation de liste + tri à
-    // chaque décision (des millions de fois pendant l'entraînement)
+    // Buffers réutilisés par CollectObservations pour les ennemis les plus proches :
+    // aucune allocation à chaque décision (des millions pendant l'entraînement)
     private EnemyAI[] nearestEnemies;
     private float[] nearestDistSq;
 
@@ -204,10 +202,8 @@ public class DwarfAgent : Agent
         AddNearestHazardObservation(sensor, pos, HazardRegistry.Ravines);
 
         // --- Ennemis les plus proches (6 chacun) ---
-        // Sélection des `observedEnemies` plus proches par insertion dans un petit
-        // buffer trié réutilisé (nearestEnemies/nearestDistSq) : évite le
-        // FindObjectsByType + l'allocation de liste + le tri complet d'avant,
-        // qui tournaient à chaque décision (des millions de fois à l'entraînement)
+        // Les `observedEnemies` plus proches, par insertion dans le buffer trié
+        // (nearestEnemies/nearestDistSq)
         for (int i = 0; i < observedEnemies; i++)
         {
             nearestEnemies[i] = null;

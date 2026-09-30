@@ -20,7 +20,7 @@ décroissant, 2×256 hidden units, gamma 0.99.
 
 ```powershell
 # Terminal (venv ML-Agents activé), depuis le dossier ML-Agents
-mlagents-learn D:\git\dwarven-arena\dwarven-arena\docs\runs\dwarf_v02_config.yaml --run-id=dwarf_v02
+mlagents-learn D:\git\dwarven-arena\docs\runs\dwarf_v02_config.yaml --run-id=dwarf_v02
 ```
 
 ## Budget d'entraînement
@@ -63,8 +63,7 @@ Les courbes de `v01` (gris) et `v02` (bleu) sont superposées.
   et une décision a lieu tous les 5 steps, soit ~600 décisions : la longueur
   d'épisode à ~599 veut dire que le nain **survit presque toujours jusqu'à la
   limite de temps**. Cette courbe ne distingue donc plus rien — elle ne mesure
-  plus la survie mais le plafond. (Le commentaire de `DwarfAgent.Initialize`
-  parlait à tort de « 3000 décisions ».)
+  plus la survie mais le plafond.
 - **Le reward mesure donc surtout le nombre de kills en temps limité**
   (+1 par kill, −0.3 par dégât, −0.0005 par step ≈ −0.3 sur l'épisode).
   `v02` en fait environ 3.4 de moins que `v01` avec les mêmes hyperparamètres.

@@ -30,8 +30,8 @@ mlagents-learn docs/runs/dwarf_v01_config.yaml --run-id=dwarf_v01
 |---|---|
 | Steps | 3 000 000 |
 | Durée | ~5 h 05 sur RTX 3080, en local, sans GPU cloud |
-| Reward moyen final | 28.42 (≈ 30 kills/épisode avant mort) |
-| Longueur d'épisode | ~600 steps (~10 s), stable |
+| Reward moyen final | 28.42 (≈ 30 kills par épisode) |
+| Longueur d'épisode | ~600 décisions : le plafond `MaxStep` (3000 steps, une décision tous les 5) |
 | Signaux d'apprentissage visibles dès | ~1 h |
 
 ## Interpréter TensorBoard
@@ -44,7 +44,7 @@ Courbes exportées depuis `http://localhost:6006` (onglet Scalars) :
 | Policy/Entropy | Baisser mais pas à zéro (sinon sur-spécialisation) | 2.8 → 1.61 ✅ |
 | Losses/Value Loss | Descendre (meilleure prédiction des récompenses) | 0.14 → 0.06 ✅ |
 | Losses/Policy Loss | Stable/faible | ~0.068 ✅ |
-| Episode Length | S'allonger si l'agent survit mieux | Plat — voir retour d'expérience ⚠️ |
+| Episode Length | S'allonger si l'agent survit mieux | Plat, au plafond de durée ⚠️ |
 
 *Astuce : lisser à 0.6 (curseur Smoothing) pour lire la tendance sous le bruit.*
 
@@ -58,7 +58,7 @@ Courbes exportées depuis `http://localhost:6006` (onglet Scalars) :
 
 ![Episode Length](../media/dwarf_v01/tensorboard_episode_length.png)
 
-*Nombre de steps avant la mort du nain (proxy du temps de survie). Ici elle plafonne à ~600 steps sans progresser — signe que l'agent a trouvé un plateau de survie plutôt qu'une stratégie qui s'améliore, cohérent avec le comportement de camping observé plus bas.*
+*Nombre de décisions par épisode. Elle reste à ~600, le plafond `MaxStep` : le nain survit presque toujours jusqu'à la limite de temps, cette courbe ne mesure donc plus la survie (voir [`dwarf_v02`](./dwarf_v02.md)).*
 
 ## Retour d'expérience
 

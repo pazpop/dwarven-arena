@@ -25,11 +25,13 @@
   sont poussés et entrent en collision avec ceux derrière → **effet domino**
 - **Swing raté** = pénalité de vitesse prolongée (le nain traîne son
   marteau) : punition incarnée, pas juste un débuff abstrait
-- Fenêtres de vulnérabilité : le windup du coup laisse le nain exposé
+- *(Prévu, pas encore codé)* Fenêtre de vulnérabilité : un windup avant le
+  coup laisserait le nain exposé
 
 ### Le bouclier
 
-- **Blocage frontal** : réduit/annule les dégâts venant de la moitié avant
+- **Blocage** : annule les dégâts de contact, quelle que soit leur direction
+  *(blocage frontal seul : prévu)*
 - **Micro-poussée** : permet de repousser légèrement les ennemis —
   ajuster le positionnement, pas tuer
 - **Orientation automatique** : pendant le blocage, le nain se tourne vers
@@ -69,8 +71,9 @@
 ## L'arène
 
 - **Ravins tout autour** : chute = mort instantanée (ring-out façon *300*)
-- **Goulot d'entrée** : passage étroit par lequel arrivent les ennemis,
-  flanqué de ravins — piège à dominos naturel
+- **Goulot d'entrée** *(prévu : aujourd'hui les ennemis apparaissent n'importe
+  où sur le sol, loin du nain et des dangers)* : passage étroit par lequel
+  arriveraient les ennemis, flanqué de ravins — piège à dominos naturel
 - **Pièges à pics au centre** : trous avec des piques, zone de kill
   plus petite mais en position stratégique
 - Des murs épars pour du cover et du positionnement
@@ -108,11 +111,11 @@ combat.
   | Poussé au bouclier → ravin | ×2.5 |
   | Poussé au bouclier → pic | ×3 |
 
-- **Multiplicateur de chaîne** : pousser N ennemis en un seul
-  swing/chaîne rapporte plus que N kills séparés → récompense le
-  style de jeu agressif et réfléchi, décourage le camping
-- Vagues croissantes : introduction progressive des orques au fil
-  des vagues (courbe d'apprentissage)
+- **Multiplicateur de chaîne** : tuer plusieurs ennemis d'un seul swing
+  rapporte +5 pts par kill au-delà du premier → récompense le style de jeu
+  agressif et réfléchi, décourage le camping
+- Vagues croissantes (+2 ennemis par vague) ; les orques forment 20 % des
+  spawns dès la première vague *(introduction progressive : prévue)*
 
 ## Menu
 

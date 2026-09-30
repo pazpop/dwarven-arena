@@ -14,7 +14,7 @@ public class HammerController : MonoBehaviour
 
     public bool IsOnCooldown => Time.time - lastSwingTime < swingCooldown;
 
-    // Fraction du cooldown restant pour les observations du DwarfAgent (7b)
+    // Fraction du cooldown restant, pour les observations du DwarfAgent :
     // 0 = marteau prêt, 1 = vient de frapper
     public float CooldownFraction =>
         Mathf.Clamp01(1f - (Time.time - lastSwingTime) / swingCooldown);
