@@ -22,13 +22,6 @@ public class GameManager : MonoBehaviour
 
     // Lecture seule pour les observations/rewards du DwarfAgent
     public int CurrentDwarfHP => dwarfHP;
-    public int Score => score;
-
-    // Nombre de kills, indépendant des points (RegisterKill varie selon le type
-    // d'ennemi/le bonus de chaîne) — c'est CE compteur que DwarfAgent utilise pour
-    // le reward, afin qu'un kill vaille toujours +1, peu importe combien de points
-    // il rapporte au score affiché au joueur
-    public int Kills { get; private set; }
 
     // Détail des kills pour le reward de l'agent, selon la façon de tuer (voir
     // RegisterEnemyKilled) : kills directs (marteau, ou chute sans poussée) et somme
@@ -47,20 +40,19 @@ public class GameManager : MonoBehaviour
         dwarfHP = dwarfMaxHP;
     }
 
-    public void RegisterKill(int points = 10)
+    public void RegisterKill(int points)
     {
         if (IsGameOver) return;
         score += points;
     }
 
     // Appelé une seule fois par ennemi effectivement tué (voir EnemyAI.Die()) —
-    // distinct de RegisterKill() : le bonus de chaîne appelle RegisterKill() sans
-    // qu'un ennemi supplémentaire soit mort, donc il ne doit pas incrémenter Kills
+    // distinct de RegisterKill(), que le bonus de chaîne appelle aussi sans
+    // qu'un ennemi supplémentaire soit mort.
     // `scoreMultiplier` : celui du score (×1 direct, ×1.5 à ×3 poussé dans un danger)
     public void RegisterEnemyKilled(float scoreMultiplier = 1f)
     {
         if (IsGameOver) return;
-        Kills++;
         if (scoreMultiplier > 1f) PushedKillMultiplierSum += scoreMultiplier;
         else DirectKills++;
     }
@@ -118,7 +110,6 @@ public class GameManager : MonoBehaviour
         IsGameOver = false;
         dwarfHP = dwarfMaxHP;
         score = 0;
-        Kills = 0;
         DirectKills = 0;
         PushedKillMultiplierSum = 0f;
         currentWave = 0;
@@ -131,7 +122,7 @@ public class GameManager : MonoBehaviour
             pm?.SetEntityActive(true);
         }
 
-        // Redémarrage des vagues — voir note sur SpawnManager ci-dessous
+        // Purge les ennemis restants et relance les vagues depuis la première
         SpawnManager.Instance.StartTrainingEpisode();
 
         if (!IsTraining) Debug.Log("--- Nouvel épisode ---");

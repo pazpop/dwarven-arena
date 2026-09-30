@@ -47,8 +47,10 @@ Objectifs d'apprentissage pour l'agent :
 - comprendre le positionnement près des ravins et pièges
 - gérer le cycle marteau (cooldown) / bouclier (défense)
 
-Les modèles entraînés (`.onnx`) sont conservés dans le repo et jouables
-directement dans le build via Unity Sentis — pas besoin de Python pour la démo.
+Les modèles entraînés (`.onnx`) sont conservés dans le repo (`Assets/Models/`)
+et se jouent dans Unity via Sentis, sans Python. Ceux de `dwarf_v01`/`v02`
+(25 observations) ne sont plus compatibles avec la scène actuelle (39, depuis
+`dwarf_v03`) : voir [POC_IA_ML-AGENTS.md](POC_IA_ML-AGENTS.md).
 
 ## 🛠️ Stack technique
 
@@ -81,7 +83,7 @@ Ouvrir un terminal Git Bash à la racine du projet :
 python -m venv venv
 source venv/Scripts/activate
 pip install mlagents
-mlagents-learn docs/runs/dwarf_v02_config.yaml --run-id=dwarf_v02
+mlagents-learn docs/runs/dwarf_v03_config.yaml --run-id=dwarf_v03
 ```
 
 Suivi de l'entraînement :

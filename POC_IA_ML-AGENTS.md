@@ -73,13 +73,13 @@ assigné : il ne sert pas pendant l'entraînement.
 
 ```powershell
 # Terminal (venv ML-Agents activé), depuis le dossier ML-Agents (ici D:\git\ml-agents)
-mlagents-learn D:\git\dwarven-arena\dwarven-arena\docsuns\<config_du_run>.yaml --run-id=<nom_du_run>
+mlagents-learn D:\git\dwarven-arena\docs\runs\<config_du_run>.yaml --run-id=<nom_du_run>
 
 # Puis Play dans l'éditeur Unity quand "Start training by pressing the Play button" apparaît
 ```
 
 Le dossier `results/` est créé dans le **dossier courant du terminal** (ici
-`D:\git\ml-agentsesults\<nom_du_run>\`), pas dans le projet Unity.
+`D:\git\ml-agents\results\<nom_du_run>\`), pas dans le projet Unity.
 
 Chaque run part d'un fichier de config dédié dans `docs/runs/` (copié/adapté du
 précédent) — ça garde une trace exacte des hyperparamètres utilisés pour

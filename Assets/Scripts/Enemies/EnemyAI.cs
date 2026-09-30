@@ -53,6 +53,10 @@ public class EnemyAI : MonoBehaviour
     private Animator animator;
     private Vector2 lastFacing = Vector2.down;
     private bool isFalling;
+    // Destroy() n'agit qu'en fin de frame : sans ce drapeau, un piège (OnTriggerStay2D,
+    // appelé à chaque pas physique, plusieurs par frame en entraînement accéléré)
+    // compterait la même mort plusieurs fois (score et reward de l'agent).
+    private bool isDead;
 
     private void OnEnable() => Alive.Add(this);
     private void OnDisable() => Alive.Remove(this);
@@ -178,6 +182,7 @@ public class EnemyAI : MonoBehaviour
     // HammerController pour le multiplicateur de chaîne sur les kills multiples)
     public bool TakeHit(int dmg, Vector2 knockback)
     {
+        if (isDead) return false;
         health -= dmg;
         rb.AddForce(knockback, ForceMode2D.Impulse);
 
@@ -211,12 +216,16 @@ public class EnemyAI : MonoBehaviour
 
     private void ExplodeWithoutScore()
     {
+        if (isDead) return;
+        isDead = true;
         SpawnExplosion(transform.position, new Color(0.1f, 0.5f, 0.1f)); // vert sombre
         Destroy(gameObject);
     }
 
     public void Die(float scoreMultiplier = 1f)
     {
+        if (isDead) return;
+        isDead = true;
         SpawnExplosion(transform.position, new Color(0.2f, 0.9f, 0.2f)); // vert
         GameManager.Instance.RegisterKill(Mathf.RoundToInt(scoreValue * scoreMultiplier));
         GameManager.Instance.RegisterEnemyKilled(scoreMultiplier);
