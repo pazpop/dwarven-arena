@@ -32,7 +32,7 @@
   - [ ] Menu principal : Start / version du jeu / Aide / Leaderboard / Options / Crédits / Quit
   - [ ] Menu pause dédié, distinct de l'écran titre : Reprendre / Aide / Options / Restart / Menu principal
     (voir [GAMEPLAY.md](./GAMEPLAY.md#menu) pour l'état actuel — un seul panneau réutilisé)
-  - [ ] HUD en jeu : score, HP, timer de la run affichés à l'écran
+  - [ ] HUD en jeu : score, vague, HP, timer de la run affichés à l'écran (score et vague déjà calculés par `GameManager`, jamais affichés)
   - [ ] Menu Options/Réglages, accessible depuis le menu principal ET le menu pause :
     - [ ] **Remapping clavier — indispensable**, pas juste un nice-to-have : les positions physiques WASD/Espace n'ont pas le même feeling en AZERTY qu'en QWERTY (ZQSD vs WASD)
     - [ ] Volume — nécessaire dès que la partie sonore existe (Stage 13)
