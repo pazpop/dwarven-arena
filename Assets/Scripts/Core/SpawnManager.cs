@@ -55,11 +55,11 @@ public class SpawnManager : MonoBehaviour
         StartCoroutine(SpawnLoopRoutine());
     }
 
-    // ==================== ENTRAÎNEMENT ML-AGENTS ====================
+    // ==================== DÉBUT DE PARTIE ====================
 
-    // Appelé par GameManager.ResetGame() à chaque début d'épisode :
+    // Appelé par GameManager.ResetGame() (menu ou épisode ML-Agents) :
     // purge les ennemis survivants, remet les compteurs à zéro, relance les vagues
-    public void StartTrainingEpisode()
+    public void StartEpisode()
     {
         StopAllCoroutines();
 

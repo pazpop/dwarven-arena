@@ -18,7 +18,6 @@ public class EnemyAI : MonoBehaviour
 
     public float speed = 3f;
     public float moveForce = 5f;
-    public int damage = 1;
 
     [Header("Santé / knockback")]
     public int health = 2;               // Gobelin : 2 coups de marteau

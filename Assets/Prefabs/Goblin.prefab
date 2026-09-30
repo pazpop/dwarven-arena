@@ -174,7 +174,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   speed: 3
   moveForce: 5
-  damage: 1
   health: 2
   knockbackDamping: 3
 --- !u!95 &2857400387229220599

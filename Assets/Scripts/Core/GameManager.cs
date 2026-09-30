@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public bool IsGameOver { get; private set; } = false;
 
     // Vrai pendant un entraînement mlagents-learn — sert à couper tout ce qui ne
-    // doit jamais s'exécuter côté entraînement (menu, logs de debug...)
+    // doit jamais s'exécuter côté entraînement (menu, pause)
     public static bool IsTraining => Academy.Instance.IsCommunicatorOn;
 
     // Lecture seule pour les observations/rewards du DwarfAgent
@@ -82,7 +82,6 @@ public class GameManager : MonoBehaviour
     {
         if (IsGameOver) return;
         currentWave++;
-        if (!IsTraining) Debug.Log($"--- Vague {currentWave} ---");
     }
 
     void GameOver()
@@ -100,11 +99,9 @@ public class GameManager : MonoBehaviour
         }
 
         MainMenuController.Instance?.OpenMenu();
-
-        if (!IsTraining) Debug.Log($"Game Over — Score final : {score}");
     }
 
-    // Reset complet de la partie — appelé par DwarfAgent.OnEpisodeBegin()
+    // Reset complet de la partie : bouton Start du menu et DwarfAgent.OnEpisodeBegin()
     public void ResetGame()
     {
         IsGameOver = false;
@@ -123,9 +120,7 @@ public class GameManager : MonoBehaviour
         }
 
         // Purge les ennemis restants et relance les vagues depuis la première
-        SpawnManager.Instance.StartTrainingEpisode();
-
-        if (!IsTraining) Debug.Log("--- Nouvel épisode ---");
+        SpawnManager.Instance.StartEpisode();
     }
 
     private Coroutine flashCoroutine;

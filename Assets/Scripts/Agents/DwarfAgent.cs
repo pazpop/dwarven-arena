@@ -147,44 +147,22 @@ public class DwarfAgent : Agent
 
     // ==================== OBSERVATIONS ====================
 
-    private bool loggedFallbackOnce = false;  // Anti-spam console du garde-fou
-
     public override void CollectObservations(VectorSensor sensor)
     {
         Vector2 pos = transform.position;
         var gm = GameManager.Instance;
-
-        // GARDE-FOU : à la frame de destruction (mort), player/hammer/gm peuvent être
-        // nuls. On injecte des valeurs neutres pour garantir TOUJOURS le même nombre d'observations.
-        bool refsValid = player != null && hammer != null && gm != null;
-
-        if (!refsValid && !loggedFallbackOnce)
-        {
-            Debug.LogWarning("DwarfAgent: références nulles dans CollectObservations — " +
-                             "observations neutres envoyées. Cause probable : destruction " +
-                             "du Player au GameOver (GameOver doit désactiver, pas Destroy).");
-            loggedFallbackOnce = true;
-        }
 
         // --- Position du nain (2) ---
         sensor.AddObservation(pos.x / 6f);
         sensor.AddObservation(pos.y / 4f);
 
         // --- État du nain (7) ---
-        if (refsValid)
-        {
-            sensor.AddObservation(player.LastMoveDirection);
-            sensor.AddObservation(hammer.CooldownFraction);
-            sensor.AddObservation(gm.CurrentDwarfHP / 3f);
-            sensor.AddObservation(player.IsShielding ? 1f : 0f);
-            sensor.AddObservation(player.IsSlowPenalty ? 1f : 0f);
-            sensor.AddObservation(player.StunTimer > 0f ? 1f : 0f);
-        }
-        else
-        {
-            sensor.AddObservation(Vector2.zero);            // direction (2 obs)
-            for (int k = 0; k < 5; k++) sensor.AddObservation(0f); // reste (5 obs)
-        }
+        sensor.AddObservation(player.LastMoveDirection);
+        sensor.AddObservation(hammer.CooldownFraction);
+        sensor.AddObservation(gm.CurrentDwarfHP / 3f);
+        sensor.AddObservation(player.IsShielding ? 1f : 0f);
+        sensor.AddObservation(player.IsSlowPenalty ? 1f : 0f);
+        sensor.AddObservation(player.StunTimer > 0f ? 1f : 0f);
 
         // --- Pics (2 × observedSpikes) ---
         for (int i = 0; i < observedSpikes; i++)
