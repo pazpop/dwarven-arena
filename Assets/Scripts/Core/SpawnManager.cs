@@ -77,7 +77,7 @@ public class SpawnManager : MonoBehaviour
         StartCoroutine(SpawnLoopRoutine());
     }
 
-    // ==================== BOUCLE DE VAGUES (inchangée) ====================
+    // ==================== BOUCLE DE VAGUES ====================
 
     // Enchaîne les vagues : spawn, attend que tous les ennemis soient morts, vague suivante
     System.Collections.IEnumerator SpawnLoopRoutine()

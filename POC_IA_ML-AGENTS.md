@@ -33,7 +33,7 @@ complet du gameplay : [GAMEPLAY.md](GAMEPLAY.md).
 **Pourquoi ces observations et ces rewards (`dwarf_v03`)** : `dwarf_v02` campait
 au centre sans jamais utiliser le décor ([compte-rendu](docs/runs/dwarf_v02.md)) :
 le reward était +1 plat par kill, et l'agent ne voyait ni les ravins ni les pics.
-Désormais, pousser un ennemi dans un danger rapporte 3 à 10 fois plus qu'un kill
+Avec `dwarf_v03`, pousser un ennemi dans un danger rapporte 3 à 10 fois plus qu'un kill
 direct, et l'agent voit où sont les dangers, par rapport à lui et à chaque ennemi.
 Aucune pénalité d'immobilité : le joueur reste libre de jouer comme il veut.
 
@@ -143,10 +143,8 @@ priori et révèle les angles morts du level design. En poussant l'agent à
 optimiser froidement sa survie, il a mis en évidence une faille de design
 (camper près d'un pic) restée invisible en jouant soi-même.
 
-Depuis ce run, plusieurs changements côté jeu visent directement ce
-comportement — les gobelins/orcs évitent maintenant activement les dangers au
-lieu de foncer dessus, ce qui change l'intérêt tactique de camper près d'un
-piège. Le prochain run permettra de voir si ce changement d'environnement,
-à lui seul, suffit à faire émerger un comportement plus agressif, ou si un
-reward shaping explicite (malus de camping, bonus de proximité aux ennemis)
-reste nécessaire.
+Faire éviter les dangers aux gobelins/orcs n'a pas suffi : `dwarf_v02`
+campe toujours, au centre cette fois ([compte-rendu](docs/runs/dwarf_v02.md)).
+`dwarf_v03` agit donc sur l'agent lui-même : rewards selon la façon de tuer
+(pousser dans un danger rapporte bien plus qu'un kill direct) et observation
+des dangers. Son run dira si le camping disparaît.

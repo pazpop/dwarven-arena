@@ -137,7 +137,7 @@ public class DwarfAgent : Agent
             return;
         }
 
-        // --- Actions (inchangé) ---
+        // --- Actions ---
         var da = actions.DiscreteActions;
         int mx = da[0] - 1;
         int my = da[1] - 1;
@@ -277,7 +277,7 @@ public class DwarfAgent : Agent
         sensor.AddObservation(bestDelta.y / 4f);
     }
 
-    // ==================== HEURISTIC (inchangé) ====================
+    // ==================== HEURISTIC ====================
 
     public override void Heuristic(in ActionBuffers actionsOut)
     {
