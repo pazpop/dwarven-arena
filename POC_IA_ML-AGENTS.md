@@ -62,7 +62,7 @@ du nain — le Player) :
 | `DwarfAgent` | **Coché (activé)**. Décoché, aucun agent ne s'enregistre et `mlagents-learn` attend indéfiniment. |
 | `Behavior Parameters` | **Behavior Type : `Default`** (pas `Inference Only`, qui rejoue un modèle sans jamais se connecter à Python). |
 | `Behavior Parameters` | **Behavior Name : `Dwarf`**, identique à la clé `behaviors:` du fichier YAML. |
-| `Decision Requester` | Decision Period `5` (inchangé). |
+| `Decision Requester` | Decision Period `5` (à laisser tel quel). |
 
 Rien d'autre à désactiver : le menu principal et la pause se coupent
 tout seuls quand Python est connecté (`GameManager.IsTraining`), et le
