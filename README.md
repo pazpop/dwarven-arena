@@ -6,6 +6,10 @@
 ![ML-Agents](https://img.shields.io/badge/ML--Agents-Unity-informational)
 ![License](https://img.shields.io/badge/licence-MIT-green)
 
+<p align="center">
+  <img src="docs/media/dwarf_v02/gameplay.gif" alt="Dwarven Arena : le nain, joué ici par l'IA, face aux gobelins et aux pics">
+</p>
+
 ## 🎯 Concept
 
 **Dwarven Arena** est un jeu 2D vue du dessus où l'on incarne un nain armé d'un
